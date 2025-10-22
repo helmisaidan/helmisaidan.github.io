@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helmi Saidan</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="https://cdn.pixabay.com/photo/2014/06/16/23/39/black-370118_1280.png">
-  <title>Helmi Saidan</title>
+</head>
+<body>
 
-  <div class="header">
-    <a href="#default" class="logo">Helmi Saidan</a>
-    <div class="header-right">
-      <a class="active" href="#home">Home</a>
+  <!-- HEADER / NAVBAR -->
+  <header class="header">
+    <div class="logo">Helmi Saidan</div>
+    <nav class="nav" id="navbar">
+      <a class="active" href="index.html">Home</a>
       <a href="about.html">About Me</a>
       <a href="education.html">Education</a>
       <a href="blog.html">Blog</a>
       <a href="gallery.html">Gallery</a>
-    </div>
-  </div>
-</head>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </header>
 
-<body>
-  <h1>Welcome to My Website!!!</h1>
-  <p>This is the home page content.</p>
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h1>Welcome to My Digital Space</h1>
+    <p>A monochrome personal website inspired by minimalism and simplicity.</p>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
