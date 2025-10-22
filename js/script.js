@@ -1,8 +1,13 @@
-function toggleMenu() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+const menuIcon = document.getElementById("menuIcon");
+const navMenu = document.getElementById("navMenu");
+
+menuIcon.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+
+  // Tukar ikon bila menu buka/tutup
+  if (navMenu.classList.contains("show")) {
+    menuIcon.innerHTML = "&times;";
   } else {
-    x.style.display = "block";
+    menuIcon.innerHTML = "&#9776;";
   }
-}
+});
