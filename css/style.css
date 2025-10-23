@@ -1,3 +1,6 @@
+/* ==============================
+   FONT IMPORT
+============================== */
 @font-face {
   font-family: 'ZEN Serif';
   src: url('../fonts/ZEN-SERIF-TTF-Regular.ttf') format('truetype');
@@ -5,32 +8,28 @@
   font-style: normal;
 }
 
-/* Base styles */
+/* ==============================
+   BASE STYLES
+============================== */
+:root {
+  --bg-color: #fff;
+  --text-color: #000;
+  --accent-color: #000;
+}
+
 body {
   margin: 0;
   font-family: 'ZEN Serif', serif;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* === MONOCHROME THEME === */
-:root {
-  --bg-color: #f0f0f0;
-  --text-color: #111;
-  --accent-color: #000;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-}
-
+/* ==============================
+   HEADER & NAVBAR
+============================== */
 header {
   background: var(--accent-color);
   color: white;
@@ -43,63 +42,85 @@ header {
   align-items: center;
   width: 90%;
   margin: auto;
+  position: relative;
 }
 
 .logo {
   font-size: 1.5em;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links a {
+.nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links .active {
-  text-decoration: underline;
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #ccc;
 }
 
+/* Toggle icon (mobile only) */
 .menu-toggle {
   display: none;
-  font-size: 1.5em;
+  font-size: 1.8em;
   cursor: pointer;
+  color: white;
 }
 
-/* HERO SECTION */
+/* ==============================
+   HERO / CONTENT
+============================== */
 .hero {
   text-align: center;
   padding: 100px 20px;
+  flex: 1;
 }
 
 .hero h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.1em;
+  opacity: 0.8;
 }
 
 .content {
   width: 90%;
   margin: 50px auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  flex: 1;
 }
 
-/* FOOTER */
+/* ==============================
+   FOOTER
+============================== */
 footer {
   text-align: center;
   background: var(--accent-color);
   color: white;
   padding: 15px 0;
-  margin-top: 50px;
+  margin-top: auto;
+  font-size: 0.9em;
 }
 
-/* RESPONSIVE MENU */
+/* ==============================
+   RESPONSIVE NAVBAR
+============================== */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -119,5 +140,18 @@ footer {
 
   .menu-toggle {
     display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important; /* pastikan visible di desktop */
+    position: static;
+    background: none;
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: none;
   }
 }
