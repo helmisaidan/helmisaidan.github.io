@@ -6,21 +6,25 @@
   <title>Helmi Saidan</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="https://cdn.pixabay.com/photo/2014/06/16/23/39/black-370118_1280.png">
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-  <!-- HEADER / NAVBAR -->
-  <header class="header">
-    <div class="logo">Helmi Saidan</div>
-    <nav class="nav" id="navbar">
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="education.html">Education</a>
-      <a href="blog.html">Blog</a>
-      <a href="gallery.html">Gallery</a>
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-  </header>
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
   <!-- MAIN CONTENT -->
   <main class="main-content">
@@ -31,3 +35,4 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
