@@ -342,146 +342,54 @@ footer a:hover {
 footer p {
   margin: 10px 0;
 }
-
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* === TABLETS (max-width: 992px) === */
-@media (max-width: 992px) {
-
-  header {
-    flex-direction: column;
-    padding: 15px 30px;
-  }
-
-  nav {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    margin: 8px 12px;
-    font-size: 0.9rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero-content p {
-    font-size: 0.9rem;
-  }
-
-  #clock {
-    font-size: 1.8rem;
-  }
-
-  .clock-label {
-    font-size: 0.8rem;
-  }
-
-  .about, .social-media, .links {
-    padding: 60px 30px;
-  }
-
-  .links ul {
-    gap: 15px;
-  }
+/* ===== MOBILE MENU (Only for small screens) ===== */
+.menu-icon {
+  display: none; /* hidden on desktop */
 }
 
-/* === MOBILE (max-width: 600px) === */
-@media (max-width: 600px) {
-
-  /* Make video text readable and centered */
-  .hero-content {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 90%;
+@media (max-width: 768px) {
+  /* Show the hamburger */
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    color: #aeff46;
+    cursor: pointer;
+    text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
+    transition: transform 0.3s ease;
+    z-index: 200;
   }
 
-  .hero-content h2 {
-    font-size: 1.6rem;
+  .menu-icon.active {
+    transform: rotate(90deg);
   }
 
-  .hero-content p {
-    font-size: 0.9rem;
-  }
-
-  /* Move clock below video text for better spacing */
-  .hero-content.right-bottom {
-    bottom: 40px;
+  /* Make nav hidden by default on mobile */
+  header nav {
+    position: absolute;
+    top: 70px;
     right: 0;
-    left: 0;
-    text-align: center;
-  }
-
-  #clock {
-    font-size: 1.5rem;
-  }
-
-  .clock-label {
-    font-size: 0.8rem;
-  }
-
-  header {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .logo {
-    font-size: 1.6rem;
-  }
-
-  nav {
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    display: none;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
+    padding: 20px 0;
+    border-top: 2px solid #aeff46;
+    box-shadow: 0 0 20px #aeff46;
   }
 
-  nav a {
-    margin: 6px 0;
-    font-size: 0.9rem;
+  header nav.show-menu {
+    display: flex;
+    animation: fadeInMenu 0.3s ease;
   }
 
-  .neon-banner {
-    padding: 8px 0;
+  @keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .scroll-text {
-    font-size: 1.4rem;
-  }
-
-  .about h2,
-  .social-media h2,
-  .links h2 {
-    font-size: 2rem;
-  }
-
-  .about p {
+  header nav a {
+    margin: 10px 0;
     font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .social-icons {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .social-icons a img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .links ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  footer {
-    padding: 25px 15px;
-    font-size: 0.9rem;
   }
 }
