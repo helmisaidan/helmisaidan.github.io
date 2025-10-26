@@ -342,49 +342,61 @@ footer a:hover {
 footer p {
   margin: 10px 0;
 }
+
 /* ===== MOBILE MENU (Only for small screens) ===== */
-.menu-icon {
-  display: none; /* hidden on desktop */
+
+/* Ensure nav shows on desktop (explicit) */
+header nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
+/* Mobile rules */
 @media (max-width: 768px) {
-  /* Show the hamburger */
+
+  /* SHOW the hamburger only on small screens */
   .menu-icon {
     display: block;
+    position: relative;
     font-size: 2rem;
     color: #aeff46;
     cursor: pointer;
     text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
     transition: transform 0.3s ease;
-    z-index: 200;
+    z-index: 300;
+    margin-left: auto; /* push to right in header */
   }
 
   .menu-icon.active {
     transform: rotate(90deg);
   }
 
-  /* Make nav hidden by default on mobile */
+  /* Hide nav links by default on mobile */
   header nav {
     position: absolute;
-    top: 70px;
+    top: 68px; /* adjust to match header height */
     right: 0;
-    background: rgba(0, 0, 0, 0.9);
+    left: 0;
+    background: rgba(0,0,0,0.9);
     width: 100%;
-    display: none;
+    display: none; /* hidden until hamburger toggles it */
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 18px 0;
     border-top: 2px solid #aeff46;
     box-shadow: 0 0 20px #aeff46;
+    z-index: 250;
   }
 
+  /* Visible menu state */
   header nav.show-menu {
     display: flex;
-    animation: fadeInMenu 0.3s ease;
+    animation: fadeInMenu 0.28s ease;
   }
 
   @keyframes fadeInMenu {
-    from { opacity: 0; transform: translateY(-10px); }
+    from { opacity: 0; transform: translateY(-8px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
