@@ -433,3 +433,7 @@ footer p {
 
   /* Make sure it’s hidden on desktop by default */
 }
+
+.menu-toggle {
+  display: none; /* hidden on desktop */
+}
