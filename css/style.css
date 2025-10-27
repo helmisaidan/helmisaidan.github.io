@@ -343,33 +343,87 @@ footer p {
   margin: 10px 0;
 }
 
-/* ===== MOBILE MENU (W3Schools style, Neon Edition) ===== */
+/* ======================
+   NAV: desktop + mobile
+   ====================== */
+
+/* --- Desktop header (keeps your original desktop styling) --- */
+.desktop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  background: transparent; /* overlay on video */
+}
+
+/* reuse your existing .logo styles for desktop */
+.desktop-header .logo {
+  font-size: 2rem;
+  color: #aeff46;
+  text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
+  animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+/* desktop nav links */
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.desktop-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+/* --- MOBILE: topnav (hidden on desktop) --- */
+/* hide .topnav by default (desktop) */
+.topnav {
+  display: none;
+}
+
+/* Mobile rules */
 @media (max-width: 900px) {
+
+  /* hide desktop header on mobile */
+  .desktop-header {
+    display: none !important;
+  }
+
+  /* show mobile topnav */
   .topnav {
+    display: flex !important;
     overflow: hidden;
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 20;
-    background: transparent; /* transparent video overlay */
+    z-index: 30;
+    background: transparent; /* transparent over video */
     padding: 10px 20px;
-    display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .topnav .logo {
+  .topnav .mobile-logo {
     font-size: 1.6rem;
     color: #aeff46;
     text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
     font-weight: bold;
-    text-decoration: none !important; /* removes underline */
+    text-decoration: none !important;
   }
 
-  .topnav #myLinks {
+  /* hidden dropdown links */
+  #myLinks {
     display: none;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0,0,0,0.95);
     position: absolute;
     top: 60px;
     left: 0;
@@ -377,35 +431,36 @@ footer p {
     padding: 20px 0;
     border-top: 2px solid #aeff46;
     box-shadow: 0 0 20px #aeff46;
-    z-index: 9999; /* ensures dropdown sits above video */
+    z-index: 9999;
   }
 
-  .topnav #myLinks a {
+  /* visible when toggled (JS toggles class "open") */
+  #myLinks.open {
+    display: flex;
+  }
+
+  #myLinks a {
     display: block;
     color: #aeff46;
     text-decoration: none;
     padding: 12px 0;
     text-align: center;
-    font-size: 1.1rem;
-    text-shadow: 0 0 10px #aeff46;
+    font-size: 1.05rem;
+    text-shadow: 0 0 8px #aeff46;
   }
 
-  .topnav #myLinks a:hover {
+  #myLinks a:hover {
     color: #fff;
   }
 
-  .topnav a.icon {
+  .topnav .icon {
     color: #aeff46;
     font-size: 2rem;
     text-shadow: 0 0 10px #aeff46, 0 0 25px #aeff46;
     cursor: pointer;
   }
 
-  .topnav a.icon:hover {
-    color: #fff;
-  }
-
-  /* ===== HERO SECTION FOR MOBILE ===== */
+  /* HERO ADJUSTMENTS for mobile */
   .hero {
     height: 80vh;
   }
@@ -415,11 +470,14 @@ footer p {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 2;
   }
 
   .hero-content.right-bottom {
     bottom: 25px;
     right: 25px;
+    left: auto;
+    top: auto;
   }
 
   #clock {
@@ -427,22 +485,8 @@ footer p {
   }
 }
 
-/* === DESKTOP === */
+/* Ensure desktop header shows exactly as intended on large screens (safety) */
 @media (min-width: 901px) {
-  header {
-    display: flex !important; /* Always visible on desktop */
-  }
-  .topnav {
-    display: none !important; /* Hide mobile menu on desktop */
-  }
-}
-
-/* === MOBILE === */
-@media (max-width: 900px) {
-  header {
-    display: none !important; /* Hide desktop header */
-  }
-  .topnav {
-    display: flex !important; /* Show mobile menu */
-  }
+  .desktop-header { display: flex !important; }
+  .topnav { display: none !important; } /* ensure mobile nav never shows on desktop */
 }
