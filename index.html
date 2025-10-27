@@ -9,44 +9,60 @@
   </head>
 <body>
 
-  <!-- ===== HERO SECTION DENGAN VIDEO ===== -->
-  <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="videos/background.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="videos/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <div class="overlay"></div>
+  <div class="overlay"></div>
 
-<!-- ===== NAVIGATION (W3Schools-style but neon) ===== -->
-<div class="topnav">
-  <a href="index.html" class="logo active">Helmi S.</a>
+  <!-- ===== DESKTOP HEADER (keeps your original desktop look) ===== -->
+  <header class="desktop-header">
+    <h1 class="logo">Helmi S.</h1>
+    <nav class="desktop-nav">
+      <a href="index.html" class="active">HOME</a>
+      <a href="biodata.html">BIODATA</a>
+      <a href="family.html">FAMILY</a>
+      <a href="education.html">EDUCATION</a>
+      <a href="experience.html">EXPERIENCE</a>
+      <a href="blog.html">BLOG</a>
+      <a href="music.html">MUSIC</a>
+      <a href="gallery.html">GALLERY</a>
+    </nav>
+  </header>
 
-  <div id="myLinks">
-    <a href="biodata.html">BIODATA</a>
-    <a href="family.html">FAMILY</a>
-    <a href="education.html">EDUCATION</a>
-    <a href="experience.html">EXPERIENCE</a>
-    <a href="blog.html">BLOG</a>
-    <a href="music.html">MUSIC</a>
-    <a href="gallery.html">GALLERY</a>
+  <!-- ===== MOBILE NAV (W3Schools-style topnav) ===== -->
+  <div class="topnav" aria-hidden="true">
+    <a href="index.html" class="logo mobile-logo">Helmi S.</a>
+
+    <div id="myLinks" aria-hidden="true">
+      <a href="biodata.html">BIODATA</a>
+      <a href="family.html">FAMILY</a>
+      <a href="education.html">EDUCATION</a>
+      <a href="experience.html">EXPERIENCE</a>
+      <a href="blog.html">BLOG</a>
+      <a href="music.html">MUSIC</a>
+      <a href="gallery.html">GALLERY</a>
+    </div>
+
+    <a href="javascript:void(0);" class="icon" id="menu-toggle" aria-label="Toggle menu">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
   </div>
 
-  <!-- "Hamburger menu" -->
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+  <!-- HERO TEXT -->
+  <div class="hero-content">
+    <h2>Welcome to My Space!</h2>
+    <p>I hope you enjoy :)</p>
+  </div>
 
-    <div class="hero-content">
-      <h2>Welcome to My Space!</h2>
-      <p>I hope you enjoy :)</p>
-    </div>
-
-    <div class="hero-content right-bottom">
-      <h2 id="clock"></h2>
-      <p class="clock-label">Current Time</p>
-    </div>
+  <!-- CLOCK (unchanged position) -->
+  <div class="hero-content right-bottom">
+    <h2 id="clock"></h2>
+    <p class="clock-label">Current Time</p>
+  </div>
+</section>
 
     <!-- Link your clock script -->
     <script src="js/clock.js"></script>
@@ -115,6 +131,7 @@
 </body>
 
 </html>
+
 
 
 
