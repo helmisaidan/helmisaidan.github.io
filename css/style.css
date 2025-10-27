@@ -343,18 +343,24 @@ footer p {
   margin: 10px 0;
 }
 
+/* ===== DEFAULT (DESKTOP) ===== */
+.icon {
+  display: none; /* hide hamburger on desktop */
+}
+
+/* ===== MOBILE VIEW ===== */
 @media (max-width: 900px) {
-  /* ===== MOBILE HEADER ===== */
+
   header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 25px;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 25px;
     z-index: 10;
   }
 
@@ -362,41 +368,48 @@ footer p {
     font-size: 1.6rem;
     color: #aeff46;
     text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
-    margin-left: 10px;
   }
 
   /* ===== MENU ICON ===== */
-  .menu-toggle {
-    display: block; /* show only on mobile */
-    background: none;
-    border: none;
+  .icon {
+    display: block;
     color: #aeff46;
     font-size: 2rem;
-    cursor: pointer;
     text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
+    cursor: pointer;
     margin-right: 10px;
-    z-index: 20;
   }
 
   /* ===== NAVIGATION ===== */
-  nav {
+  #myTopnav {
     display: none;
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 65px;
     left: 0;
+    right: 0;
     background: rgba(0, 0, 0, 0.95);
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 25px 0;
     border-top: 2px solid #aeff46;
     box-shadow: 0 0 20px #aeff46;
+    padding: 20px 0;
   }
 
-  nav.show {
+  #myTopnav.responsive {
     display: flex;
     animation: fadeDown 0.3s ease;
+  }
+
+  #myTopnav a {
+    color: #aeff46;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    text-shadow: 0 0 10px #aeff46;
+  }
+
+  #myTopnav a:hover {
+    color: #fff;
   }
 
   @keyframes fadeDown {
@@ -404,32 +417,18 @@ footer p {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  nav a {
-    color: #aeff46;
-    font-size: 1.1rem;
-    text-decoration: none;
-    text-shadow: 0 0 10px #aeff46;
-  }
-
-  nav a:hover {
-    color: #fff;
-  }
-
-  /* ===== HERO SECTION ===== */
+  /* ===== HERO (adjust for smaller screen) ===== */
   .hero {
-    height: 80vh; /* shorter video on mobile */
+    height: 80vh;
   }
 
   .hero-content {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
     width: 85%;
+    text-align: center;
   }
-
-  .hero-content h2 { font-size: 1.8rem; }
-  .hero-content p  { font-size: 1rem; }
 
   .hero-content.right-bottom {
     bottom: 25px;
@@ -441,4 +440,3 @@ footer p {
     font-size: 1.4rem;
   }
 }
-
