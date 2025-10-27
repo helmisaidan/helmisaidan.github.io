@@ -343,52 +343,72 @@ footer p {
   margin: 10px 0;
 }
 
+/* === MOBILE ONLY FIX (≤900px) === */
 @media (max-width: 900px) {
-  /* ===== MOBILE HEADER ===== */
+
+  /* Shorter video */
+  .hero {
+    height: 80vh;
+  }
+
+  /* Align hero contents better */
+  .hero-content {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 85%;
+  }
+
+  /* Keep your original nice clock, just small adjust */
+  .hero-content.right-bottom {
+    bottom: 25px;
+    right: 25px;
+    left: auto;
+    top: auto;
+    text-align: right;
+  }
+
+  #clock {
+    font-size: 1.4rem;
+  }
+
+  /* --- Header Adjustments --- */
   header {
-    padding: 15px 25px;
-    background: transparent;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    background: transparent;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 25px;
     z-index: 10;
   }
 
   .logo {
     font-size: 1.6rem;
+    margin-left: 10px;
   }
 
-  /* Show hamburger, hide normal nav */
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: #aeff46;
-    font-size: 2rem;
-    cursor: pointer;
-    text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
-    z-index: 20;
-  }
-
-  nav {
+  /* Hide nav by default */
+  header nav {
     display: none;
     position: absolute;
     top: 70px;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0,0,0,0.95);
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    padding: 20px 0;
+    padding: 25px 0;
     border-top: 2px solid #aeff46;
     box-shadow: 0 0 20px #aeff46;
   }
 
-  nav.show {
+  header nav.show {
     display: flex;
     animation: fadeDown 0.3s ease;
   }
@@ -398,29 +418,18 @@ footer p {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ===== MOBILE HERO SECTION ===== */
-  .hero {
-    height: 80vh; /* shorter for mobile */
+  /* Show menu icon ONLY on mobile */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #aeff46;
+    font-size: 2rem;
+    cursor: pointer;
+    text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
+    margin-right: 10px;
+    z-index: 20;
   }
 
-  .hero-content {
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 90%;
-  }
-
-  .hero-content h2 { font-size: 1.8rem; }
-  .hero-content p  { font-size: 1rem; }
-
-  .hero-content.right-bottom {
-    bottom: 25px;
-    right: 25px;
-    left: auto;
-    top: auto;
-    text-align: right;
-  }
-
-  #clock { font-size: 1.4rem; }
+  /* Make sure it’s hidden on desktop by default */
 }
