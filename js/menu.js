@@ -1,6 +1,6 @@
-const menuToggle = document.getElementById('menu-toggle');
-const nav = document.querySelector('header nav');
+function toggleMenu() {
+  const nav = document.getElementById("myTopnav");
+  nav.classList.toggle("responsive");
+}
 
-menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('show');
-});
+document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
