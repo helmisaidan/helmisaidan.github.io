@@ -344,99 +344,68 @@ footer p {
 }
 
 /* ===== MOBILE MENU (W3Schools style, Neon Edition) ===== */
-.topnav {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 20;
-  background: transparent; /* transparent video overlay */
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.topnav .logo {
-  font-size: 1.6rem;
-  color: #aeff46;
-  text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
-  font-weight: bold;
-}
-
-.topnav #myLinks {
-  display: none;
-  flex-direction: column;
-  background: rgba(0, 0, 0, 0.95);
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  padding: 20px 0;
-  border-top: 2px solid #aeff46;
-  box-shadow: 0 0 20px #aeff46;
-}
-
-.topnav #myLinks a {
-  display: block;
-  color: #aeff46;
-  text-decoration: none;
-  padding: 12px 0;
-  text-align: center;
-  font-size: 1.1rem;
-  text-shadow: 0 0 10px #aeff46;
-}
-
-.topnav #myLinks a:hover {
-  color: #fff;
-}
-
-.topnav a.icon {
-  color: #aeff46;
-  font-size: 2rem;
-  text-shadow: 0 0 10px #aeff46, 0 0 25px #aeff46;
-  cursor: pointer;
-}
-
-.topnav a.icon:hover {
-  color: #fff;
-}
-
-/* ===== DESKTOP ===== */
-@media (min-width: 901px) {
+@media (max-width: 900px) {
   .topnav {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px 60px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    background: transparent; /* transparent video overlay */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topnav .logo {
+    font-size: 1.6rem;
+    color: #aeff46;
+    text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
+    font-weight: bold;
+    text-decoration: none !important; /* removes underline */
   }
 
   .topnav #myLinks {
-    display: flex !important;
-    flex-direction: row;
-    background: transparent;
-    position: static;
-    justify-content: flex-end;
-    gap: 25px;
-    border: none;
-    box-shadow: none;
-  }
-
-  .topnav a.icon {
     display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    border-top: 2px solid #aeff46;
+    box-shadow: 0 0 20px #aeff46;
+    z-index: 9999; /* ensures dropdown sits above video */
   }
 
   .topnav #myLinks a {
-    padding: 0;
-    color: #fff;
-    text-shadow: none;
+    display: block;
+    color: #aeff46;
+    text-decoration: none;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px #aeff46;
   }
 
   .topnav #myLinks a:hover {
-    color: #aeff46;
+    color: #fff;
   }
-}
 
-/* ===== HERO SECTION FOR MOBILE ===== */
-@media (max-width: 900px) {
+  .topnav a.icon {
+    color: #aeff46;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #aeff46, 0 0 25px #aeff46;
+    cursor: pointer;
+  }
+
+  .topnav a.icon:hover {
+    color: #fff;
+  }
+
+  /* ===== HERO SECTION FOR MOBILE ===== */
   .hero {
     height: 80vh;
   }
@@ -457,3 +426,6 @@ footer p {
     font-size: 1.4rem;
   }
 }
+
+/* ===== DESKTOP (unchanged, your original header style remains) ===== */
+@media (min-widt
