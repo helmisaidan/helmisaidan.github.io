@@ -344,24 +344,28 @@ footer p {
 }
 
 @media (max-width: 900px) {
-  /* ===== MOBILE HEADER ===== */
+
+  /* ===== HEADER (Transparent & Inline) ===== */
   header {
-    padding: 15px 25px;
-    background: transparent;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    background: transparent;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 25px;
     z-index: 10;
   }
 
   .logo {
     font-size: 1.6rem;
+    color: #aeff46;
+    text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
   }
 
-  /* Show hamburger, hide normal nav */
+  /* ===== MENU ICON ===== */
   .menu-toggle {
     display: block;
     background: none;
@@ -373,24 +377,36 @@ footer p {
     z-index: 20;
   }
 
-  nav {
+  /* ===== NAVIGATION MENU (Hidden by default) ===== */
+  #mobile-nav {
     display: none;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 70px;
     right: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
     border-top: 2px solid #aeff46;
     box-shadow: 0 0 20px #aeff46;
+    padding: 25px 0;
+    gap: 15px;
+    animation: fadeDown 0.3s ease;
   }
 
-  nav.show {
+  #mobile-nav.show {
     display: flex;
-    animation: fadeDown 0.3s ease;
+  }
+
+  #mobile-nav a {
+    color: #aeff46;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-shadow: 0 0 10px #aeff46;
+  }
+
+  #mobile-nav a:hover {
+    color: #fff;
   }
 
   @keyframes fadeDown {
@@ -398,9 +414,9 @@ footer p {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ===== MOBILE HERO SECTION ===== */
+  /* ===== HERO SECTION ===== */
   .hero {
-    height: 80vh; /* shorter for mobile */
+    height: 80vh; /* shorter video for mobile */
   }
 
   .hero-content {
@@ -408,19 +424,34 @@ footer p {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 90%;
+    width: 85%;
   }
 
-  .hero-content h2 { font-size: 1.8rem; }
-  .hero-content p  { font-size: 1rem; }
+  .hero-content h2 {
+    font-size: 1.7rem;
+  }
 
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* ===== CLOCK (bottom right, nicely aligned) ===== */
   .hero-content.right-bottom {
     bottom: 25px;
     right: 25px;
-    left: auto;
-    top: auto;
     text-align: right;
   }
 
-  #clock { font-size: 1.4rem; }
+  #clock {
+    font-size: 1.4rem;
+  }
+
+  /* Adjust spacing for logo and icon to mirror clock position */
+  header .logo {
+    margin-left: 10px;
+  }
+
+  .menu-toggle {
+    margin-right: 10px;
+  }
 }
