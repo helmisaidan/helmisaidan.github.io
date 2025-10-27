@@ -343,84 +343,36 @@ footer p {
   margin: 10px 0;
 }
 
-/* === MOBILE ONLY FIX (≤900px) === */
+/* Desktop default */
+.menu-toggle {
+  display: none; /* hide icon on desktop */
+}
+
 @media (max-width: 900px) {
-
-  /* Shorter video */
-  .hero {
-    height: 80vh;
-  }
-
-  /* Align hero contents better */
-  .hero-content {
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 85%;
-  }
-
-  /* Keep your original nice clock, just small adjust */
-  .hero-content.right-bottom {
-    bottom: 25px;
-    right: 25px;
-    left: auto;
-    top: auto;
-    text-align: right;
-  }
-
-  #clock {
-    font-size: 1.4rem;
-  }
-
-  /* --- Header Adjustments --- */
+  /* ===== MOBILE HEADER ===== */
   header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 15px 25px;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 25px;
     z-index: 10;
   }
 
   .logo {
     font-size: 1.6rem;
+    color: #aeff46;
+    text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
     margin-left: 10px;
   }
 
-  /* Hide nav by default */
-  header nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    left: 0;
-    background: rgba(0,0,0,0.95);
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 25px 0;
-    border-top: 2px solid #aeff46;
-    box-shadow: 0 0 20px #aeff46;
-  }
-
-  header nav.show {
-    display: flex;
-    animation: fadeDown 0.3s ease;
-  }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Show menu icon ONLY on mobile */
+  /* ===== MENU ICON ===== */
   .menu-toggle {
-    display: block;
+    display: block; /* show only on mobile */
     background: none;
     border: none;
     color: #aeff46;
@@ -431,9 +383,66 @@ footer p {
     z-index: 20;
   }
 
-  /* Make sure it’s hidden on desktop by default */
-}
+  /* ===== NAVIGATION ===== */
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 0;
+    border-top: 2px solid #aeff46;
+    box-shadow: 0 0 20px #aeff46;
+  }
 
-.menu-toggle {
-  display: none; /* hidden on desktop */
+  nav.show {
+    display: flex;
+    animation: fadeDown 0.3s ease;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  nav a {
+    color: #aeff46;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-shadow: 0 0 10px #aeff46;
+  }
+
+  nav a:hover {
+    color: #fff;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    height: 80vh; /* shorter video on mobile */
+  }
+
+  .hero-content {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 85%;
+  }
+
+  .hero-content h2 { font-size: 1.8rem; }
+  .hero-content p  { font-size: 1rem; }
+
+  .hero-content.right-bottom {
+    bottom: 25px;
+    right: 25px;
+    text-align: right;
+  }
+
+  #clock {
+    font-size: 1.4rem;
+  }
 }
