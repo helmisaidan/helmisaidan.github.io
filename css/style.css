@@ -343,81 +343,100 @@ footer p {
   margin: 10px 0;
 }
 
-/* ===== DEFAULT (DESKTOP) ===== */
-.icon {
-  display: none; /* hide hamburger on desktop */
+/* ===== MOBILE MENU (W3Schools style, Neon Edition) ===== */
+.topnav {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  background: transparent; /* transparent video overlay */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ===== MOBILE VIEW ===== */
-@media (max-width: 900px) {
+.topnav .logo {
+  font-size: 1.6rem;
+  color: #aeff46;
+  text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
+  font-weight: bold;
+}
 
-  header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.topnav #myLinks {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.95);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  border-top: 2px solid #aeff46;
+  box-shadow: 0 0 20px #aeff46;
+}
+
+.topnav #myLinks a {
+  display: block;
+  color: #aeff46;
+  text-decoration: none;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px #aeff46;
+}
+
+.topnav #myLinks a:hover {
+  color: #fff;
+}
+
+.topnav a.icon {
+  color: #aeff46;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #aeff46, 0 0 25px #aeff46;
+  cursor: pointer;
+}
+
+.topnav a.icon:hover {
+  color: #fff;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 901px) {
+  .topnav {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 60px;
+  }
+
+  .topnav #myLinks {
+    display: flex !important;
+    flex-direction: row;
     background: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    z-index: 10;
+    position: static;
+    justify-content: flex-end;
+    gap: 25px;
+    border: none;
+    box-shadow: none;
   }
 
-  .logo {
-    font-size: 1.6rem;
-    color: #aeff46;
-    text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
-  }
-
-  /* ===== MENU ICON ===== */
-  .icon {
-    display: block;
-    color: #aeff46;
-    font-size: 2rem;
-    text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
-  /* ===== NAVIGATION ===== */
-  #myTopnav {
+  .topnav a.icon {
     display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    align-items: center;
-    border-top: 2px solid #aeff46;
-    box-shadow: 0 0 20px #aeff46;
-    padding: 20px 0;
   }
 
-  #myTopnav.responsive {
-    display: flex;
-    animation: fadeDown 0.3s ease;
-  }
-
-  #myTopnav a {
-    color: #aeff46;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 10px 0;
-    text-shadow: 0 0 10px #aeff46;
-  }
-
-  #myTopnav a:hover {
+  .topnav #myLinks a {
+    padding: 0;
     color: #fff;
+    text-shadow: none;
   }
 
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+  .topnav #myLinks a:hover {
+    color: #aeff46;
   }
+}
 
-  /* ===== HERO (adjust for smaller screen) ===== */
+/* ===== HERO SECTION FOR MOBILE ===== */
+@media (max-width: 900px) {
   .hero {
     height: 80vh;
   }
@@ -426,14 +445,12 @@ footer p {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 85%;
     text-align: center;
   }
 
   .hero-content.right-bottom {
     bottom: 25px;
     right: 25px;
-    text-align: right;
   }
 
   #clock {
