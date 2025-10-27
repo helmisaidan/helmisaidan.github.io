@@ -343,11 +343,6 @@ footer p {
   margin: 10px 0;
 }
 
-/* Desktop default */
-.menu-toggle {
-  display: none; /* hide icon on desktop */
-}
-
 @media (max-width: 900px) {
   /* ===== MOBILE HEADER ===== */
   header {
@@ -446,3 +441,4 @@ footer p {
     font-size: 1.4rem;
   }
 }
+
