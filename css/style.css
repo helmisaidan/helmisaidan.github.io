@@ -343,56 +343,67 @@ footer p {
   margin: 10px 0;
 }
 
-/* ===== MOBILE MENU (Only for small screens) ===== */
+/* ===== RESPONSIVE MOBILE DESIGN ===== */
 
-/* Ensure nav shows on desktop (explicit) */
-header nav {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+/* Hide hamburger by default (desktop) */
+.menu-icon {
+  display: none;
 }
 
-/* Mobile rules */
+/* ===== TABLET & MOBILE STYLES ===== */
 @media (max-width: 768px) {
 
-  /* SHOW the hamburger only on small screens */
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(174, 255, 70, 0.4);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    color: #aeff46;
+    text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
+  }
+
   .menu-icon {
     display: block;
-    position: relative;
     font-size: 2rem;
     color: #aeff46;
     cursor: pointer;
     text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
     transition: transform 0.3s ease;
-    z-index: 300;
-    margin-left: auto; /* push to right in header */
   }
 
   .menu-icon.active {
     transform: rotate(90deg);
   }
 
-  /* Hide nav links by default on mobile */
+  /* NAVIGATION MENU (Hidden until toggled) */
   header nav {
     position: absolute;
-    top: 68px; /* adjust to match header height */
+    top: 65px;
     right: 0;
     left: 0;
-    background: rgba(0,0,0,0.9);
-    width: 100%;
-    display: none; /* hidden until hamburger toggles it */
-    flex-direction: column;
-    align-items: center;
-    padding: 18px 0;
+    background: rgba(0, 0, 0, 0.95);
     border-top: 2px solid #aeff46;
     box-shadow: 0 0 20px #aeff46;
-    z-index: 250;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 90;
   }
 
-  /* Visible menu state */
   header nav.show-menu {
     display: flex;
-    animation: fadeInMenu 0.28s ease;
+    animation: fadeInMenu 0.3s ease;
   }
 
   @keyframes fadeInMenu {
@@ -403,5 +414,89 @@ header nav {
   header nav a {
     margin: 10px 0;
     font-size: 1rem;
+    color: #fff;
+  }
+
+  header nav a:hover {
+    color: #aeff46;
+  }
+
+  /* HERO VIDEO */
+  .hero {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .hero-video {
+    object-fit: cover;
+  }
+
+  /* WELCOME TEXT */
+  .hero-content {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* CLOCK (bottom-right, slightly inward) */
+  .hero-content.right-bottom {
+    bottom: 40px;
+    right: 25px;
+    left: auto;
+    text-align: right;
+    top: auto;
+    transform: none;
+  }
+
+  #clock {
+    font-size: 1.6rem;
+  }
+
+  .clock-label {
+    font-size: 0.9rem;
+  }
+
+  /* GENERAL SECTIONS */
+  .about, .social-media, .links {
+    padding: 60px 25px;
+    text-align: center;
+  }
+
+  .about h2,
+  .social-media h2,
+  .links h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  footer {
+    padding: 25px 15px;
+    font-size: 0.9rem;
   }
 }
