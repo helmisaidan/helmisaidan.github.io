@@ -343,160 +343,110 @@ footer p {
   margin: 10px 0;
 }
 
-/* ===== RESPONSIVE MOBILE DESIGN ===== */
-
-/* Hide hamburger by default (desktop) */
-.menu-icon {
-  display: none;
+/* === HEADER BASE === */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  z-index: 10;
 }
 
-/* ===== TABLET & MOBILE STYLES ===== */
-@media (max-width: 768px) {
+.site-header .logo {
+  font-size: 2rem;
+  color: #aeff46;
+  text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
+}
 
-  /* HEADER */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 25px;
-    background: rgba(0, 0, 0, 0.6);
-    border-bottom: 1px solid rgba(174, 255, 70, 0.4);
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-  }
+/* === NORMAL DESKTOP NAV === */
+#main-nav {
+  display: flex;
+  gap: 25px;
+}
 
-  .logo {
-    font-size: 1.6rem;
-    color: #aeff46;
-    text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
-  }
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+}
 
-  .menu-icon {
-    display: block;
-    font-size: 2rem;
-    color: #aeff46;
-    cursor: pointer;
-    text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
-    transition: transform 0.3s ease;
-  }
+#main-nav a.active,
+#main-nav a:hover {
+  color: #aeff46;
+}
 
-  .menu-icon.active {
-    transform: rotate(90deg);
-  }
+/* === HAMBURGER ICON === */
+.menu-toggle {
+  display: none;                /* hidden on desktop */
+  background: none;
+  border: none;
+  color: #aeff46;
+  font-size: 2rem;
+  cursor: pointer;
+  text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
+  transition: transform 0.3s ease;
+  z-index: 200;
+}
 
-  /* NAVIGATION MENU (Hidden until toggled) */
-  header nav {
+.menu-toggle.active { transform: rotate(90deg); }
+
+/* === MOBILE VIEW (≤900px) === */
+@media (max-width: 900px) {
+
+  /* show hamburger, hide normal nav */
+  .menu-toggle { display: block; }
+  #main-nav {
     position: absolute;
-    top: 65px;
+    top: 70px;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.95);
-    border-top: 2px solid #aeff46;
-    box-shadow: 0 0 20px #aeff46;
-    display: none;
+    background: rgba(0,0,0,0.9);
     flex-direction: column;
     align-items: center;
+    gap: 15px;
     padding: 20px 0;
-    z-index: 90;
+    display: none;
+    border-top: 2px solid #aeff46;
+    box-shadow: 0 0 20px #aeff46;
+  }
+  #main-nav.open { display: flex; animation: fadeDown 0.25s ease; }
+
+  @keyframes fadeDown {
+    from {opacity:0; transform:translateY(-10px);}
+    to {opacity:1; transform:translateY(0);}
   }
 
-  header nav.show-menu {
-    display: flex;
-    animation: fadeInMenu 0.3s ease;
+  .site-header {
+    padding: 15px 25px;
   }
+}
 
-  @keyframes fadeInMenu {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  header nav a {
-    margin: 10px 0;
-    font-size: 1rem;
-    color: #fff;
-  }
-
-  header nav a:hover {
-    color: #aeff46;
-  }
-
-  /* HERO VIDEO */
-  .hero {
-    height: 100vh;
-    width: 100%;
-  }
-
-  .hero-video {
-    object-fit: cover;
-  }
-
-  /* WELCOME TEXT */
+/* === MOBILE HERO TWEAKS === */
+@media (max-width: 900px) {
   .hero-content {
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 90%;
-    position: absolute;
-    z-index: 2;
   }
 
-  .hero-content h2 {
-    font-size: 1.8rem;
-  }
+  .hero-content h2 { font-size: 1.7rem; }
+  .hero-content p  { font-size: 1rem; }
 
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  /* CLOCK (bottom-right, slightly inward) */
   .hero-content.right-bottom {
-    bottom: 40px;
+    bottom: 35px;
     right: 25px;
     left: auto;
-    text-align: right;
     top: auto;
     transform: none;
+    text-align: right;
   }
 
-  #clock {
-    font-size: 1.6rem;
-  }
-
-  .clock-label {
-    font-size: 0.9rem;
-  }
-
-  /* GENERAL SECTIONS */
-  .about, .social-media, .links {
-    padding: 60px 25px;
-    text-align: center;
-  }
-
-  .about h2,
-  .social-media h2,
-  .links h2 {
-    font-size: 2rem;
-  }
-
-  .about p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .social-icons {
-    flex-wrap: wrap;
-    gap: 25px;
-  }
-
-  .links ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  footer {
-    padding: 25px 15px;
-    font-size: 0.9rem;
-  }
+  #clock { font-size: 1.5rem; }
 }
