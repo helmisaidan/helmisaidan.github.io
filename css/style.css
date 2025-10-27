@@ -427,5 +427,22 @@ footer p {
   }
 }
 
-/* ===== DESKTOP (unchanged, your original header style remains) ===== */
-@media (min-widt
+/* show main desktop header, hide mobile menu on big screens */
+@media (min-width: 901px) {
+  header {
+    display: flex;
+  }
+  .topnav {
+    display: none;
+  }
+}
+
+/* hide main desktop header, show topnav only on mobile */
+@media (max-width: 900px) {
+  header {
+    display: none;
+  }
+  .topnav {
+    display: flex;
+  }
+}
