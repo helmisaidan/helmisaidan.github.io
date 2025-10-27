@@ -1,21 +1,16 @@
-// === Mobile Menu Toggle ===
-const menuIcon = document.getElementById("menu-icon");
-const navLinks = document.getElementById("nav-links");
+// Neon hamburger toggle
+const toggleBtn = document.getElementById("menu-toggle");
+const nav = document.getElementById("main-nav");
 
-function isMobile() {
-  return window.matchMedia("(max-width: 768px)").matches;
-}
-
-menuIcon.addEventListener("click", () => {
-  if (isMobile()) {
-    navLinks.classList.toggle("show-menu");
-    menuIcon.classList.toggle("active");
-  }
+toggleBtn.addEventListener("click", () => {
+  nav.classList.toggle("open");
+  toggleBtn.classList.toggle("active");
 });
 
+// If screen resized up to desktop, always show nav & reset icon
 window.addEventListener("resize", () => {
-  if (!isMobile()) {
-    navLinks.classList.remove("show-menu");
-    menuIcon.classList.remove("active");
+  if (window.innerWidth > 900) {
+    nav.classList.remove("open");
+    toggleBtn.classList.remove("active");
   }
 });
