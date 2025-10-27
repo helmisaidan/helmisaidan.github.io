@@ -427,22 +427,22 @@ footer p {
   }
 }
 
-/* show main desktop header, hide mobile menu on big screens */
+/* === DESKTOP === */
 @media (min-width: 901px) {
   header {
-    display: flex;
+    display: flex !important; /* Always visible on desktop */
   }
   .topnav {
-    display: none;
+    display: none !important; /* Hide mobile menu on desktop */
   }
 }
 
-/* hide main desktop header, show topnav only on mobile */
+/* === MOBILE === */
 @media (max-width: 900px) {
   header {
-    display: none;
+    display: none !important; /* Hide desktop header */
   }
   .topnav {
-    display: flex;
+    display: flex !important; /* Show mobile menu */
   }
 }
