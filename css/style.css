@@ -220,12 +220,13 @@ nav a.active {
 /* ===== ABOUT ===== */
 .about {
   padding: 80px 60px;
-  text-align: center;
+  text-align: justify;
   background-color: #0d0d0d;
 }
 
 .about h2 {
   font-size: 2.5rem;
+  text-align: center;
   color: #aeff46;
   text-shadow: 0 0 15px #aeff46;
   margin-bottom: 20px;
@@ -242,38 +243,86 @@ nav a.active {
 .highlight {
   color: #aeff46;
   text-shadow: 0 0 10px #aeff46;
+  text-decoration: none; /* removes underline */
 }
 
-/* ===== SOCIAL MEDIA ===== */
-.social-media {
+/* ===== FAVORITE QUOTES (NEON BOX STYLE - BALANCED) ===== */
+.quotes {
   padding: 80px 60px;
   text-align: center;
   background-color: #121212;
 }
 
-.social-media h2 {
+.quotes h2 {
+  font-size: 2.4rem;
   color: #aeff46;
-  font-size: 2.5rem;
-  text-shadow: 0 0 15px #aeff46;
-  margin-bottom: 30px;
+  text-shadow: 0 0 15px #aeff46, 0 0 25px #aeff46;
+  margin-bottom: 40px;
+  animation: glowPulse 3s infinite ease-in-out;
+  letter-spacing: 1px;
 }
 
-.social-icons {
+/* Flexbox for alignment */
+.quotes-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.social-icons a img {
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 0 5px #aeff46);
-  transition: transform 0.3s ease, filter 0.3s ease;
+/* Each quote box */
+.quote-box {
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(174, 255, 70, 0.7);
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 0 10px rgba(174, 255, 70, 0.2);
+  backdrop-filter: blur(6px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-.social-icons a:hover img {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 12px #aeff46);
+.quote-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px #aeff46;
+  border-color: #aeff46;
+}
+
+/* Main text */
+.quote-box p {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.6;
+  text-shadow: 0 0 6px rgba(174, 255, 70, 0.2);
+  margin-bottom: 12px;
+}
+
+/* Subtext */
+.quote-box span {
+  display: block;
+  font-size: 0.85rem;
+  color: #aeff46;
+  opacity: 0.9;
+  text-shadow: 0 0 6px #aeff46;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .quotes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quote-box {
+    width: 85%;
+    max-width: 400px;
+  }
 }
 
 /* ===== LINKS ===== */
@@ -313,9 +362,41 @@ nav a.active {
   border-bottom: 2px solid #aeff46;
 }
 
+/* ===== SOCIAL MEDIA ===== */
+.social-media {
+  padding: 80px 60px;
+  text-align: center;
+  background-color: #121212;
+}
+
+.social-media h2 {
+  color: #aeff46;
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px #aeff46;
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icons a img {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 5px #aeff46);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px #aeff46);
+}
+
 /* ===== FOOTER ===== */
 footer {
-  background-color: #121212;
+  background-color: #0d0d0d;
   border-top: 0px solid #aeff46;
   box-shadow: 0 0 0px #aeff46;
   text-align: center;
@@ -343,150 +424,333 @@ footer p {
   margin: 10px 0;
 }
 
-/* ======================
-   NAV: desktop + mobile
-   ====================== */
+/* ======= MOBILE MENU STYLES ======= */
 
-/* --- Desktop header (keeps your original desktop styling) --- */
-.desktop-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 60px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-  background: transparent; /* overlay on video */
-}
-
-/* reuse your existing .logo styles for desktop */
-.desktop-header .logo {
-  font-size: 2rem;
-  color: #aeff46;
-  text-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
-  animation: glowPulse 2.5s infinite ease-in-out;
-}
-
-/* desktop nav links */
-.desktop-nav {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.desktop-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  position: relative;
-}
-
-/* --- MOBILE: topnav (hidden on desktop) --- */
-/* hide .topnav by default (desktop) */
-.topnav {
-  display: none;
-}
-
-/* Mobile rules */
-@media (max-width: 900px) {
-
-  /* hide desktop header on mobile */
-  .desktop-header {
-    display: none !important;
-  }
-
-  /* show mobile topnav */
-  .topnav {
-    display: flex !important;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 30;
-    background: transparent; /* transparent over video */
-    padding: 10px 20px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .topnav .mobile-logo {
-    font-size: 1.6rem;
-    color: #aeff46;
-    text-shadow: 0 0 8px #aeff46, 0 0 20px #aeff46;
-    font-weight: bold;
-    text-decoration: none !important;
-  }
-
-  /* hidden dropdown links */
-  #myLinks {
-    display: none;
-    flex-direction: column;
-    background: rgba(0,0,0,0.95);
-    position: absolute;
-    top: 60px;
+@media (max-width: 768px) {
+  /* Target header inside hero for mobile */
+  .hero header {
+    position: absolute; /* keep header on top of hero video */
+    top: 10px;
     left: 0;
     width: 100%;
-    padding: 20px 0;
-    border-top: 2px solid #aeff46;
-    box-shadow: 0 0 20px #aeff46;
-    z-index: 9999;
+    padding: 15px 30px; /* 30px left & right for alignment with links */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
   }
 
-  /* visible when toggled (JS toggles class "open") */
-  #myLinks.open {
+  .hero header .logo {
+    margin-left: 0; /* hugs left, aligned with desktop nav links */
+  }
+
+  .hero header .menu-toggle {
+    margin-right: 0; /* hugs right, aligned with black panel links */
+  }
+}
+
+/* Hamburger icon (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+.menu-toggle span {
+  height: 4px;
+  width: 100%;
+  background-color: #adff2f;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate icon into X when active */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ======= MOBILE NAV PANEL ======= */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    position: relative;
+    z-index: 3000;
+  }
+
+  /* Hide desktop nav initially */
+  header nav {
     display: flex;
   }
 
-  #myLinks a {
-    display: block;
-    color: #aeff46;
-    text-decoration: none;
-    padding: 12px 0;
-    text-align: center;
-    font-size: 1.05rem;
-    text-shadow: 0 0 8px #aeff46;
+  .menu-toggle {
+    display: flex;
+    z-index: 4000;
   }
 
-  #myLinks a:hover {
-    color: #fff;
+  /* When menu is active, dark overlay above all */
+  body.menu-open {
+    overflow: hidden; /* disable scroll when open */
   }
 
-  .topnav .icon {
-    color: #aeff46;
-    font-size: 2rem;
-    text-shadow: 0 0 10px #aeff46, 0 0 25px #aeff46;
-    cursor: pointer;
-  }
-
-  /* HERO ADJUSTMENTS for mobile */
-  .hero {
-    height: 80vh;
-  }
-
-  .hero-content {
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-  }
-
-  .hero-content.right-bottom {
-    bottom: 25px;
-    right: 25px;
-    left: auto;
-    top: auto;
-  }
-
+  section,
+  .hero-content,
   #clock {
-    font-size: 1.4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  nav.show {
+    z-index: 9999 !important;
   }
 }
 
-/* Ensure desktop header shows exactly as intended on large screens (safety) */
-@media (min-width: 901px) {
-  .desktop-header { display: flex !important; }
-  .topnav { display: none !important; } /* ensure mobile nav never shows on desktop */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: auto;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 90px 30px 20px;
+    transition: right 0.4s ease;
+    z-index: 9999;
+  }
+
+  nav.show {
+    right: 0;
+  }
+
+  nav a {
+    color: #adff2f;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: right;
+    width: 100%;
+  }
+
+  /* disable underline or hover effects for mobile */
+  nav a::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* existing mobile nav styles ... */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 10001;
+  }
+
+  .menu-toggle span {
+    height: 4px;
+    width: 100%;
+    background-color: #adff2f;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+/* ===== HERO SECTION RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero {
+    height: 65vh; /* shorter hero for mobile */
+  }
+
+  .hero-content {
+    top: 90px;       /* adjust below header */
+    left: 30px;      /* reduce left padding */
+    font-size: 0.9rem; /* base font smaller */
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem; /* smaller heading */
+  }
+
+  .hero-content p {
+    font-size: 0.85rem; /* smaller paragraph */
+  }
+
+  .hero-content.right-bottom {
+    bottom: 20px;
+    right: 30px;
+  }
+
+  #clock {
+    font-size: 1.8rem;
+  }
+
+  .clock-label {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== BANNER TEKS BERGERAK ===== */
+@media (max-width: 768px) {
+  .scroll-text {
+    font-size: 1.5rem;
+    padding-right: 25px; /* reduce spacing for smooth scroll */
+  }
+}
+
+/* ===== ABOUT ===== */
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 30px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== FAVORITE QUOTES ===== */
+@media (max-width: 768px) {
+  .quotes {
+    padding: 30px 30px;
+  }
+
+  .quotes h2 {
+    font-size: 2rem;
+  }
+
+  .quote-box {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px 30px;
+  }
+
+  .quote-box p {
+    font-size: 0.9rem;
+  }
+
+  .quote-box span {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===== LINKS ===== */
+@media (max-width: 768px) {
+  .links {
+    padding: 30px 0; /* top & bottom 30px, left/right handled by flex centering */
+  }
+
+  .links h2 {
+    font-size: 2rem;
+  }
+
+  .links ul {
+    display: flex;               /* use flex layout */
+    flex-direction: column;      /* stack vertically */
+    align-items: center;         /* center horizontally */
+    gap: 15px;                   /* space between links */
+    padding-left: 0;             /* remove default padding */
+  }
+
+  .links ul li a {
+    font-size: 1rem;             /* mobile-friendly size */
+  }
+}
+
+/* ===== SOCIAL MEDIA ===== */
+@media (max-width: 768px) {
+  .social-media {
+    padding: 30px 30px;
+  }
+
+  .social-media h2 {
+    font-size: 2rem;
+  }
+
+  .social-icons a img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ===== FOOTER ===== */
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 30px;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== MOVE TO TOP BUTTON ===== */
+#toTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background-color: #0d0d0d;
+  color: #aeff46;
+  border: 2px solid #aeff46;
+  padding: 12px 16px;
+  border-radius: 30% 30% 30% 30%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
+  text-shadow: 0 0 6px #aeff46;
+  transition: all 0.3s ease;
+  display: none; /* hidden by default */
+}
+
+#toTopBtn:hover {
+  background-color: #aeff46;
+  color: #0d0d0d;
+  box-shadow: 0 0 15px #aeff46, 0 0 30px #aeff46;
+  transform: scale(1.1);
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  #toTopBtn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    font-size: 1.3rem;
+  }
 }
