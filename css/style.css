@@ -589,7 +589,7 @@ footer p {
 /* ===== HERO SECTION RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero {
-    height: 65vh; /* shorter hero for mobile */
+    height: 80vh; /* shorter hero for mobile */
   }
 
   .hero-content {
@@ -754,3 +754,4 @@ footer p {
     font-size: 1.3rem;
   }
 }
+
