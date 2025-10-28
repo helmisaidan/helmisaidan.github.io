@@ -729,7 +729,6 @@ footer p {
   color: #aeff46;
   border: 2px solid #aeff46;
   padding: 10px 14px;
-  border-radius: 30% 30% 30% 30%;
   font-size: 1.5rem;
   cursor: pointer;
   box-shadow: 0 0 8px #aeff46, 0 0 18px #aeff46;
@@ -754,6 +753,7 @@ footer p {
     font-size: 1.3rem;
   }
 }
+
 
 
 
