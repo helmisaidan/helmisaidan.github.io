@@ -5,67 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helmi Saidan | Home</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 <body>
 
-<section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="videos/background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <!-- ===== HERO SECTION DENGAN VIDEO ===== -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="videos/background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <div class="overlay"></div>
+    <div class="overlay"></div>
 
-  <!-- ===== DESKTOP HEADER (keeps your original desktop look) ===== -->
-  <header class="desktop-header">
-    <h1 class="logo">Helmi S.</h1>
-    <nav class="desktop-nav">
-      <a href="index.html" class="active">HOME</a>
-      <a href="biodata.html">BIODATA</a>
-      <a href="family.html">FAMILY</a>
-      <a href="education.html">EDUCATION</a>
-      <a href="experience.html">EXPERIENCE</a>
-      <a href="blog.html">BLOG</a>
-      <a href="music.html">MUSIC</a>
-      <a href="gallery.html">GALLERY</a>
-    </nav>
-  </header>
+<header>
+  <h1 class="logo">Helmi S.</h1>
 
-  <!-- ===== MOBILE NAV (W3Schools-style topnav) ===== -->
-  <div class="topnav" aria-hidden="true">
-    <a href="index.html" class="logo mobile-logo">Helmi S.</a>
+  <!-- Hamburger Button -->
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-    <div id="myLinks" aria-hidden="true">
-      <a href="biodata.html">BIODATA</a>
-      <a href="family.html">FAMILY</a>
-      <a href="education.html">EDUCATION</a>
-      <a href="experience.html">EXPERIENCE</a>
-      <a href="blog.html">BLOG</a>
-      <a href="music.html">MUSIC</a>
-      <a href="gallery.html">GALLERY</a>
+  <nav id="nav-menu">
+    <a href="index.html" class="active">HOME</a>
+    <a href="biodata.html">BIODATA</a>
+    <a href="family.html">FAMILY</a>
+    <a href="education.html">EDUCATION</a>
+    <a href="experience.html">EXPERIENCE</a>
+    <a href="blog.html">BLOG</a>
+    <a href="music.html">MUSIC</a>
+    <a href="gallery.html">GALLERY</a>
+  </nav>
+</header>
+
+
+    <div class="hero-content">
+      <h2>Welcome to My Space!</h2>
+      <p>I hope you enjoy :)</p>
     </div>
 
-    <a href="javascript:void(0);" class="icon" id="menu-toggle" aria-label="Toggle menu">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </a>
-  </div>
-
-  <!-- HERO TEXT -->
-  <div class="hero-content">
-    <h2>Welcome to My Space!</h2>
-    <p>I hope you enjoy :)</p>
-  </div>
-
-  <!-- CLOCK (unchanged position) -->
-  <div class="hero-content right-bottom">
-    <h2 id="clock"></h2>
-    <p class="clock-label">Current Time</p>
-  </div>
-</section>
+    <div class="hero-content right-bottom">
+      <h2 id="clock"></h2>
+      <p class="clock-label">Current Time</p>
+    </div>
 
     <!-- Link your clock script -->
     <script src="js/clock.js"></script>
+
   </section>
 
   <!-- ===== BANNER TEKS BERGERAK NEON ===== -->
@@ -84,23 +71,29 @@
   <!-- ABOUT ME -->
   <section class="about">
     <h2>About Me</h2>
-    <p>Hi! I'm <span class="highlight">Helmi Saidan</span> — a curious mind who loves creating cool, meaningful, and visually stunning things on the web.  
-    I enjoy combining creativity and logic to turn ideas into real digital experiences.</p>
+    <p>Hello! My name is <a href="biodata.html" class="highlight">Muhammad Zulhelmi Bin Saidan</a>. I'm from KCDIM1105E. This website was created specifically for subject IMD 318 – Introduction to Web Content Management & Design.
+    This website contains a lot about me including my biodata, family, educational background and more! I hope you enjoy your visit :)</p>
   </section>
 
-  <!-- SOCIAL MEDIA -->
-  <section class="social-media">
-    <h2>Connect with Me</h2>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/helmisaidan" target="_blank" aria-label="Instagram">
-        <img src="icons/instagram.png" alt="Instagram" />
-      </a>
-      <a href="https://www.youtube.com/@helmisaidan" target="_blank" aria-label="YouTube">
-        <img src="icons/youtube.png" alt="YouTube" />
-      </a>
-      <a href="https://tiktok.com/@helmisaidan" target="_blank" aria-label="Twitter">
-        <img src="icons/tiktok.png" alt="TikTok" />
-      </a>
+  <!-- FAVORITE QUOTES SECTION -->
+  <section class="quotes">
+    <h2>Favorite Quotes</h2>
+
+    <div class="quotes-container">
+      <div class="quote-box">
+        <p>“Even the stars need darkness to shine.”</p>
+        <span>— Embrace your insecurities and grow from them</span>
+      </div>
+
+      <div class="quote-box">
+        <p>“A small step each day becomes a big change someday.”</p>
+        <span>— Keep moving, no matter how slow</span>
+      </div>
+
+      <div class="quote-box">
+        <p>“You are not behind — you’re just building quietly.”</p>
+        <span>— Your time will come, trust your path</span>
+      </div>
     </div>
   </section>
 
@@ -119,49 +112,35 @@
     </ul>
   </section>
 
+  <!-- SOCIAL MEDIA -->
+  <section class="social-media">
+    <h2>Connect with Me</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/helmisaidan" target="_blank" aria-label="Instagram">
+        <img src="icons/instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://www.youtube.com/@helmisaidan" target="_blank" aria-label="YouTube">
+        <img src="icons/youtube.png" alt="YouTube" />
+      </a>
+      <a href="https://tiktok.com/@helmisaidan" target="_blank" aria-label="Twitter">
+        <img src="icons/tiktok.png" alt="TikTok" />
+      </a>
+    </div>
+  </section>
+
 <footer>
   <p>© 2025 <span class="highlight">Helmi Saidan</span> | IMD318 Individual Project</p>
-  <p>Created: October 2025 | Last Updated: 26 October 2025</p>
+  <p>Created: October 2025 | Last Updated: <span id="lastUpdated"></span></p>
   <p>Email: <a href="mailto:itshelmii@gmail.com">itshelmii@gmail.com</a></p>
+
+  <script src="js/lastUpdated.js"></script>
 </footer>
 
+<!-- Move to Top Button -->
+<button id="toTopBtn" title="Go to top">↑</button>
+
 </main>
-  <script>
-  // Toggle mobile links: adds/removes the "open" class
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.getElementById('menu-toggle');
-    const links = document.getElementById('myLinks');
-
-    if (!btn || !links) return;
-
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      links.classList.toggle('open');
-    });
-
-    // If user resizes to desktop, ensure dropdown is closed
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 900) {
-        links.classList.remove('open');
-      }
-    });
-  });
-</script>
+<script src="js/menu.js"></script>
+<script src="js/scrollTop.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
