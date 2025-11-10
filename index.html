@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helmi Saidan | Home</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zulhelmi | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 
-  <!-- ===== HERO SECTION DENGAN VIDEO ===== -->
-  <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="videos/background.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <div class="overlay"></div>
-
 <header>
-  <h1 class="logo">Helmi S.</h1>
-
-  <!-- Hamburger Button -->
+  <h1 class="logo">Zulhelmi</h1>
   <div class="menu-toggle" id="menu-toggle">
     <span></span>
     <span></span>
     <span></span>
   </div>
-
   <nav id="nav-menu">
     <a href="index.html" class="active">HOME</a>
     <a href="biodata.html">BIODATA</a>
@@ -34,71 +22,73 @@
     <a href="education.html">EDUCATION</a>
     <a href="experience.html">EXPERIENCE</a>
     <a href="blog.html">BLOG</a>
-    <a href="music.html">MUSIC</a>
     <a href="gallery.html">GALLERY</a>
   </nav>
 </header>
 
-
-    <div class="hero-content">
-      <h2>Welcome to My Space!</h2>
-      <p>I hope you enjoy :)</p>
-    </div>
-
-    <div class="hero-content right-bottom">
-      <h2 id="clock"></h2>
-      <p class="clock-label">Current Time</p>
-    </div>
-
-    <!-- Link your clock script -->
-    <script src="js/clock.js"></script>
-
-  </section>
-
-  <!-- ===== BANNER TEKS BERGERAK NEON ===== -->
-  <div class="neon-banner">
-    <div class="scroll-track">
-      <div class="scroll-text">
-        WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • 
-      </div>
-      <div class="scroll-text">
-        WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • WELCOME • 
-      </div>
-    </div>
+<!-- Slideshow container -->
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="images/slides1.jpg">
+    <div class="text">Welcome to My Space!</div>
   </div>
-<main>
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="images/slides2.jpg">
+    <div class="text">I hope you enjoy :)</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="images/slides3.jpg">
+    <div class="text">Thank You</div>
+  </div>
 
-  <!-- ABOUT ME -->
-  <section class="about">
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script src="js/script.js"></script>
+
+<!-- ABOUT ME -->
+<section class="about">
+  <div class="container">
     <h2>About Me</h2>
     <p>Hello! My name is <a href="biodata.html" class="highlight">Muhammad Zulhelmi Bin Saidan</a>. I'm from KCDIM1105E. This website was created specifically for subject IMD 318 – Introduction to Web Content Management & Design.
     This website contains a lot about me including my biodata, family, educational background and more! I hope you enjoy your visit :)</p>
-  </section>
+  </div>
+</section>
 
-  <!-- FAVORITE QUOTES SECTION -->
-  <section class="quotes">
+<!-- FAVORITE QUOTES -->
+<section class="quotes">
+  <div class="container">
     <h2>Favorite Quotes</h2>
-
     <div class="quotes-container">
       <div class="quote-box">
         <p>“Even the stars need darkness to shine.”</p>
         <span>— Embrace your insecurities and grow from them</span>
       </div>
-
       <div class="quote-box">
         <p>“A small step each day becomes a big change someday.”</p>
         <span>— Keep moving, no matter how slow</span>
       </div>
-
       <div class="quote-box">
         <p>“You are not behind — you’re just building quietly.”</p>
         <span>— Your time will come, trust your path</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- LINKS -->
-  <section class="links">
+<!-- QUICK LINKS -->
+<section class="links">
+  <div class="container">
     <h2>Quick Links</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -107,39 +97,43 @@
       <li><a href="education.html">Education</a></li>
       <li><a href="experience.html">Experience</a></li>
       <li><a href="blog.html">Blog</a></li>
-      <li><a href="music.html">Music</a></li>
       <li><a href="gallery.html">Gallery</a></li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <!-- SOCIAL MEDIA -->
-  <section class="social-media">
+<!-- SOCIAL MEDIA -->
+<section class="social-media">
+  <div class="container">
     <h2>Connect with Me</h2>
     <div class="social-icons">
-      <a href="https://www.instagram.com/helmisaidan" target="_blank" aria-label="Instagram">
+      <a href="https://www.instagram.com/helmoir" target="_blank" aria-label="Instagram">
         <img src="icons/instagram.png" alt="Instagram" />
       </a>
-      <a href="https://www.youtube.com/@helmisaidan" target="_blank" aria-label="YouTube">
-        <img src="icons/youtube.png" alt="YouTube" />
-      </a>
-      <a href="https://tiktok.com/@helmisaidan" target="_blank" aria-label="Twitter">
+      <a href="https://tiktok.com/@helmoir" target="_blank" aria-label="TikTok">
         <img src="icons/tiktok.png" alt="TikTok" />
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 <span class="highlight">Helmi Saidan</span> | IMD318 Individual Project</p>
-  <p>Created: October 2025 | Last Updated: <span id="lastUpdated"></span></p>
-  <p>Email: <a href="mailto:itshelmii@gmail.com">itshelmii@gmail.com</a></p>
+  <div class="container">
+    <div class="hero-content right-bottom">
+      <p class="clock-label">Current Time</p>      
+      <h2 id="clock"></h2>
+    </div>
 
-  <script src="js/lastUpdated.js"></script>
+    <p>©2025 <span class="highlight">Zulhelmi</span> | IMD318 Individual Project</p>
+    <p>Created: October 2025 | Last Updated: <span id="lastUpdated"></span></p>
+    <p>Email: <a href="mailto:itshelmii@gmail.com">itshelmii@gmail.com</a></p> 
+    <button id="toTopBtn" title="Go to top">↑</button>
+    <script src="js/lastUpdated.js"></script>
+  </div>
 </footer>
 
-<!-- Move to Top Button -->
-<button id="toTopBtn" title="Go to top">↑</button>
 
-</main>
 <script src="js/menu.js"></script>
 <script src="js/scrollTop.js"></script>
 </body>
