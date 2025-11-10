@@ -213,18 +213,20 @@ section.quotes {
   justify-content: center;
 }
 
+
 .quote-box {
   flex: 1 1 250px;
-  background-color: #202A44;
-  color: #202A44;
-  padding: 30px 20px; /* equal top & bottom padding */
-  border-radius: 10px;
+  background-color: transparent; /* remove background fill */
+  color: #f0f3fa;
+  padding: 30px 20px;
+  border: 2px solid #f0f3fa; /* add border instead */
+  border-radius: 10px; /* rounded corners */
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical center fix */
+  justify-content: center;
   align-items: center;
-  min-height: 180px; /* consistent visual height */
+  min-height: 180px;
 }
 
 .quote-box p {
@@ -233,7 +235,7 @@ section.quotes {
 
 .quote-box span {
   font-size: 14px;
-  color: #555;
+  color: #c2c8da;
 }
 
 /* Quick Links */
@@ -396,4 +398,5 @@ footer a {
     align-items: center;
   }
 }
+
 
