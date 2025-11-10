@@ -215,7 +215,7 @@ section.quotes {
 
 .quote-box {
   flex: 1 1 250px;
-  background-color: #f0f3fa;
+  background-color: #202A44;
   color: #202A44;
   padding: 30px 20px; /* equal top & bottom padding */
   border-radius: 10px;
@@ -396,3 +396,4 @@ footer a {
     align-items: center;
   }
 }
+
