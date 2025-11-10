@@ -92,8 +92,9 @@ nav a.active::after {
   position: relative;
   max-width: 100%;
   margin: 20px 30px;
-  height: 460px; /* increased height */
+  height: 490px; /* increased height */
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .slideshow-container img {
@@ -398,5 +399,6 @@ footer a {
     align-items: center;
   }
 }
+
 
 
