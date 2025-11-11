@@ -202,6 +202,46 @@ section.about p {
   font-weight: bold;
 }
 
+.about-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* First button – goes to another page */
+.btn-primary {
+  background-color: #f0f3fa;
+  color: #202A44;
+  padding: 10px 25px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  border-color: #f0f3fa;
+  color: #f0f3fa;
+}
+
+/* Second button – scrolls to section */
+.btn-link {
+  color: #c2c8da;
+  font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #9cb3ff; /* a soft bluish tint – pairs beautifully with #202A44 */
+}
+
 /* Quotes */
 section.quotes {
   background-color: #202A44;
@@ -388,6 +428,16 @@ footer a {
     padding: 30px 15px;
   }
 
+  .about-buttons {
+    gap: 10px;
+  }
+
+  .btn-primary {
+    width: 80%;
+    text-align: center;
+  }
+}
+   
   .quotes-container {
     gap: 10px;
   }
@@ -399,6 +449,7 @@ footer a {
     align-items: center;
   }
 }
+
 
 
 
