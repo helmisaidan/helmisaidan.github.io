@@ -317,18 +317,22 @@ section.links {
 .links ul li a:hover::after {
   width: 100%;
 }
-
-/* Social Media */
-section.social-media {
-  text-align: center;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* adjust spacing */
+  align-items: center;
+  padding: 0;
 }
 
 .social-icons img {
+  display: block; /* remove inline-block artifacts */
   width: 40px;
   height: 40px;
   transition: transform 0.3s, opacity 0.3s;
   cursor: pointer;
 }
+
 
 .social-icons img:hover {
   transform: scale(1.2);
@@ -355,6 +359,7 @@ footer a {
 
 /* Up button */
 #toTopBtn {
+  display: none; /* hide initially */
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -388,8 +393,8 @@ footer a {
     top: 60px;
     right: 0;
     width: 100%;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 15px;
+    text-align: right;
   }
 
   nav.show {
@@ -399,6 +404,28 @@ footer a {
   .menu-toggle {
     display: flex;
   }
+
+/* Menu toggle spans */
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #f0f3fa;
+  border-radius: 2px;
+  transition: all 0.4s; /* smooth animation */
+}
+
+/* Bila menu dibuka (tambah class .change) */
+.menu-toggle.change span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.change span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.change span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
   .slideshow-container {
     height: auto; /* follow image height naturally */
@@ -449,4 +476,3 @@ footer a {
     align-items: center;
   }
 }
-
