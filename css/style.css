@@ -294,6 +294,7 @@ section.links {
 }
 
 .links ul li a {
+  display: inline-block;
   text-decoration: none;
   color: #f0f3fa;
   padding: 5px 10px;
@@ -449,6 +450,7 @@ footer a {
     align-items: center;
   }
 }
+
 
 
 
