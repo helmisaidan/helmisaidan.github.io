@@ -207,7 +207,7 @@ section.about p {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 /* First button – goes to another page */
@@ -449,6 +449,7 @@ footer a {
     align-items: center;
   }
 }
+
 
 
 
