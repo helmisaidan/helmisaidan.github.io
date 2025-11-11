@@ -434,7 +434,7 @@ footer a {
   }
 
   .btn-primary {
-    width: 80%;
+    width: 50%;
     text-align: center;
   }
 
@@ -449,3 +449,4 @@ footer a {
     align-items: center;
   }
 }
+
