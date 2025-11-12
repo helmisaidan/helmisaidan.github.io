@@ -216,7 +216,7 @@ section.about p {
   color: #202A44;
   padding: 10px 25px;
   border: 2px solid transparent;
-  border-radius: 5px;
+  border-radius: 100px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -476,3 +476,4 @@ footer a {
     align-items: center;
   }
 }
+
