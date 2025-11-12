@@ -186,13 +186,13 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* About Me */
-section.about {
+/* Introduction */
+section.introduction {
   background-color: #202A44;
   color: #f0f3fa;
 }
 
-section.about p {
+section.introduction p {
   text-align: justify;
 }
 
@@ -202,7 +202,7 @@ section.about p {
   font-weight: bold;
 }
 
-.about-buttons {
+.introduction-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -476,4 +476,5 @@ footer a {
     align-items: center;
   }
 }
+
 
