@@ -339,6 +339,12 @@ section.links {
   opacity: 0.8;
 }
 
+/* Fix anchor scroll for sticky header */
+#social-media {
+  scroll-margin-top: 70px; /* adjust ikut header height */
+  scroll-behavior: smooth; /* smooth scroll effect */
+}
+
 /* Footer */
 footer {
   background-color: #202A44;
@@ -476,6 +482,7 @@ footer a {
     align-items: center;
   }
 }
+
 
 
 
