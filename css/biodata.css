@@ -1,0 +1,289 @@
+/* =========================
+   BIODATA SPECIFIC STYLES
+========================= */
+section.biodata {
+  padding: 30px 30px;
+}
+
+section.biodata h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Bio Layout – picture + text + table in a row */
+.bio-layout {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.bio-top {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bio-pic {
+  width: 200px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 0%;
+  border: 4px solid #f0f3fa;
+  transition: transform 0.3s;
+}
+
+.bio-pic:hover {
+  transform: scale(1.05);
+}
+
+.bio-text {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+.bio-text p {
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.info-table {
+  flex: 1 1 280px;
+  border-collapse: collapse;
+  min-width: 250px;
+}
+
+.info-table th,
+.info-table td {
+  border: 1px solid #f0f3fa;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.info-table .table-heading {
+  background-color: rgba(240, 243, 250, 0.1);
+  text-align: center;
+}
+
+/* Favourites */
+section.favourites {
+  padding: 0px 30px 30px;
+  text-align: center;
+}
+
+.fav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fav-box {
+  flex: 1 1 250px;
+  border: 2px solid #f0f3fa;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 180px;
+  text-align: center;
+}
+
+.fav-box h3 {
+  margin-bottom: 12px;
+}
+
+.fav-box p {
+  text-align: justify;
+}
+
+.fav-box ul, .fav-box ol {
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+/* Artist / Song Items */
+
+.fav-img {
+  width: 100%;       /* Fit the box width */
+  aspect-ratio: 16/9; /* Keep 16:9 ratio */
+  object-fit: cover;  /* Crop if necessary to fill box */
+  border-radius: 8px; /* Rounded corners to match box style */
+  margin-bottom: 0px;
+}
+ 
+.artist-item, .song-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.artist-item img, .song-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.song-item audio {
+  margin-top: 5px;
+}
+
+/* =========================
+   RESPONSIVE MOBILE VIEW
+========================= */
+@media screen and (max-width: 768px) {
+
+  /* General section spacing */
+  section.biodata,
+  section.favourites {
+    padding: 30px 15px;
+  }
+
+  section.biodata h2,
+  section.favourites h2 {
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+
+  /* --- BIODATA LAYOUT --- */
+  .bio-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .bio-top {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+.bio-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* 👉 ini buat gambar bulat */
+  object-fit: cover;   /* pastikan gambar tak terdistort */
+  border: 4px solid #fff; /* boleh tukar warna border ikut tema */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* optional: bagi efek lembut */
+}
+
+
+  .bio-top p {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #c2c8da;
+  }
+
+  .bio-text {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .bio-text p {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .info-table {
+    width: 100%;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .info-table th,
+  .info-table td {
+    padding: 8px 10px;
+  }
+
+  .info-table .table-heading {
+    font-size: 16px;
+  }
+
+  /* --- FAVOURITES SECTION --- */
+  .fav-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .fav-box {
+    flex: 1 1 100%;
+    min-height: auto;
+    padding: 20px 15px;
+    border-radius: 8px;
+  }
+
+  .fav-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .fav-box p {
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .fav-box ul,
+  .fav-box ol {
+    font-size: 15px;
+    padding-left: 25px;
+  }
+
+  .fav-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+/* --- ARTISTS --- */
+.artist-item {
+  flex-direction: column;   /* kekalkan gambar atas, nama bawah */
+  align-items: center;      /* center secara melintang */
+  text-align: center;
+  gap: 8px;
+}
+
+.artist-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.artist-item p {
+  font-size: 15px;
+  color: #fff;
+}
+
+  /* --- SONGS --- */
+  .song-item p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .song-item audio {
+    width: 100%;
+  }
+
+  /* --- QUICK LINKS reuse --- */
+  .links ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  footer {
+    padding: 25px 15px;
+    font-size: 13px;
+  }
+
+  #toTopBtn {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 12px;
+  }
+}
