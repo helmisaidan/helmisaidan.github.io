@@ -186,13 +186,13 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* Introduction */
-section.introduction {
+/* Welcome */
+section.welcome {
   background-color: #202A44;
   color: #f0f3fa;
 }
 
-section.introduction p {
+section.welcome p {
   text-align: justify;
 }
 
@@ -202,7 +202,7 @@ section.introduction p {
   font-weight: bold;
 }
 
-.introduction-buttons {
+.welcome-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -476,5 +476,6 @@ footer a {
     align-items: center;
   }
 }
+
 
 
