@@ -1,0 +1,77 @@
+/* =========================
+   FAMILY PAGE STYLES
+========================= */
+
+/* Family Section – ikut padding header (30px kiri kanan) */
+section.family {
+  padding: 30px 30px;
+  background-color: #202A44;
+  color: white;
+}
+
+/* Title */
+section.family h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Paragraph full width like header */
+section.family p {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Family Cards Wrapper FULL WIDTH */
+.family-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+/* Individual Cards */
+.family-card {
+  background: #2A3455;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.family-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Images */
+.family-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;   /* <— bagi gambar align dari atas */
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.family-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.family-card p {
+  text-align: center;
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE MOBILE VIEW
+========================= */
+@media screen and (max-width: 768px) {
+
+  /* General section spacing */
+  section.family {
+    padding: 30px 15px;
+  }
