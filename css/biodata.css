@@ -57,7 +57,7 @@ section.biodata h2 {
 
 .info-table th,
 .info-table td {
-  border: 1px solid #f0f3fa;
+  border: 2px solid #f0f3fa;
   padding: 10px 15px;
   text-align: left;
 }
@@ -287,4 +287,5 @@ section.favourites {
     padding: 8px 12px;
   }
 }
+
 
