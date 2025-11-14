@@ -195,7 +195,7 @@ section.welcome {
 }
 
 section.welcome p {
-  text-align: justify;
+  text-align: center;
 }
 
 .highlight {
@@ -495,5 +495,6 @@ footer a {
     padding: 8px 12px;
   }
 }
+
 
 
