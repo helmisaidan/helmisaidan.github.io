@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zulhelmi | Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+
+<!-- HEADER (REUSE) -->
+<header>
+  <h1 class="logo">Zulhelmi</h1>
+<div class="menu-toggle" id="menu-toggle" onclick="toggleMenu(this)">
+  <span></span><span></span><span></span>
+</div>
+  <nav id="nav-menu">
+    <a href="https://helmisaidan.github.io">Home</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html" class="active">Gallery</a>
+  </nav>
+</header>
+
+<!-- MAIN GALLERY SECTION -->
+<section class="gallery-page">
+
+  <h2>My Gallery</h2>
+  <p class="gallery-desc">A collection of my favourite photos and memorable moments.</p>
+
+  <!-- CATEGORY TABS -->
+  <div class="gallery-tabs">
+    <button class="tab-btn active" onclick="filterGallery('all')">All</button>
+    <button class="tab-btn" onclick="filterGallery('landscapes')">Landscapes</button>
+    <button class="tab-btn" onclick="filterGallery('foods')">Foods</button>
+    <button class="tab-btn" onclick="filterGallery('internship')">Internship</button>
+    <button class="tab-btn" onclick="filterGallery('videos')">Videos</button>
+  </div>
+
+  <!-- GALLERY GRID -->
+  <div class="gallery-container">
+
+    <!-- Contoh images (TUKAR NAMA FILE IKUT KAMU) -->
+    <div class="gallery-item landscapes">
+      <img src="images/land1.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land2.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land3.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land4.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land5.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land6.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land7.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land8.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land9.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land10.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land11.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item landscapes">
+      <img src="images/land12.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item foods">
+      <img src="images/food1.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item foods">
+      <img src="images/food2.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item internship">
+      <img src="images/intern1.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="gallery-item internship">
+      <img src="images/intern2.jpg" onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- VIDEO -->
+    <div class="gallery-item videos">
+      <video src="videos/video1.mp4" onclick="openVideoLightbox(this.src)"></video>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX POPUP -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close-btn">&times;</span>
+  <img id="lightbox-img">
+  <video id="lightbox-video" controls></video>
+</div>
+
+<!-- QUICKLINK (REUSE) -->
+<section class="links">
+  <div class="container">
+    <h2>Quick Links</h2>
+    <ul>
+      <li><a href="https://helmisaidan.github.io">Home</a></li>
+      <li><a href="biodata.html">Biodata</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER (REUSE) -->
+<footer>
+  <div class="container">
+    <div class="hero-content right-bottom">
+      <p class="clock-label">Current Time</p>      
+      <h2 id="clock"></h2>
+    </div>
+    <p>©2025 <span class="highlight">Zulhelmi</span> | IMD318 Individual Project</p>
+    <p>Created: October 2025 | Last Updated: <span id="lastUpdated"></span></p>
+    <p>Email: <a href="mailto:itshelmii@gmail.com">itshelmii@gmail.com</a></p>
+    <button id="toTopBtn" title="Go to top">↑</button>
+    <script src="js/lastUpdated.js"></script>
+  </div>
+</footer>
+<script src="js/clock.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/scrollTop.js"></script>
+<script src="js/gallery.js"></script>
+
+</body>
+</html>
