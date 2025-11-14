@@ -393,9 +393,8 @@ footer a {
   }
 header .logo {
   text-decoration: none;
-  cursor: pointer;
 }
-
+   
   nav {
     display: none;
     flex-direction: column;
@@ -467,7 +466,9 @@ header .logo {
   section {
     padding: 30px 15px;
   }
-
+  section.welcome p {
+  text-align: center;
+  }
   .welcome-buttons {
     gap: 10px;
   }
@@ -499,6 +500,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
