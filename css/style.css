@@ -466,9 +466,11 @@ header .logo {
   section {
     padding: 30px 15px;
   }
+   
   section.welcome p {
   text-align: justify;
   }
+   
   .welcome-buttons {
     gap: 10px;
   }
@@ -500,6 +502,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
