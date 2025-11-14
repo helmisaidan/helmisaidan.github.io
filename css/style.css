@@ -37,6 +37,8 @@ header .logo {
   font-size: 28px;
   font-weight: bold;
   color: #f0f3fa;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 nav {
@@ -493,4 +495,5 @@ footer a {
     padding: 8px 12px;
   }
 }
+
 
