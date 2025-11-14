@@ -116,3 +116,22 @@ section.edu-timeline {
     text-align: center;
   }
 }
+
+  /* --- QUICK LINKS reuse --- */
+  .links ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  footer {
+    padding: 25px 15px;
+    font-size: 13px;
+  }
+
+  #toTopBtn {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 12px;
+  }
+}
