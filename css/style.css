@@ -391,6 +391,10 @@ footer a {
   header {
     padding: 15px 15px; /* same as content */
   }
+header .logo {
+  text-decoration: none;
+  cursor: pointer;
+}
 
   nav {
     display: none;
@@ -495,6 +499,7 @@ footer a {
     padding: 8px 12px;
   }
 }
+
 
 
 
