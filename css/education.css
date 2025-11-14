@@ -1,0 +1,118 @@
+/* =========================
+   EDUCATION PAGE
+========================= */
+
+section.edu-header,
+section.edu-timeline {
+  padding: 30px 30px; /* same as header */
+}
+
+.edu-header h1 {
+  text-align: center;
+  font-size: 32px; /* same as homepage */
+  color: #f0f3fa;
+  margin-bottom: 20px;
+}
+
+.edu-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Garisan timeline di belakang content */
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: rgba(240,243,250,0.05);
+  z-index: 0;
+}
+
+.timeline-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.timeline-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f0f3fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #202A44;
+}
+
+.timeline-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-text {
+  background-color: #202A44; /* sama macam background laman, garis hilang terus */
+  padding: 20px 25px;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.timeline-text h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #f0f3fa;
+}
+
+.timeline-text p {
+  font-size: 16px;
+  color: #c2c8da;
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+@media screen and (max-width: 768px) {
+  section.edu-header,
+  section.edu-timeline {
+    padding: 30px 15px; /* ikut header */
+  }
+
+  .timeline-row {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 15px;
+    width: 100%; /* pastikan row ikut lebar section */
+  }
+
+  .timeline-text {
+    width: 100%;           /* ikut lebar section */
+    max-width: 400px;      /* optional: hadkan maksimum */
+    min-height: 100px;     /* kotak sama tinggi minimum */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .timeline-text h3,
+  .timeline-text p {
+    text-align: center;
+  }
+}
