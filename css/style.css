@@ -350,8 +350,8 @@ footer {
   background-color: #202A44;
   color: #f0f3fa;
   text-align: center;
-  padding: 30px 30px;
-  font-size: 14px;
+  padding: 25px 15px;
+  font-size: 13px;
 }
 
 footer .highlight {
@@ -482,9 +482,3 @@ footer a {
     align-items: center;
   }
 }
-
-
-
-
-
-
