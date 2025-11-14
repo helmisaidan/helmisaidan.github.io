@@ -482,3 +482,8 @@ footer a {
     align-items: center;
   }
 }
+
+  footer {
+    padding: 25px 15px;
+    font-size: 13px;
+  }
