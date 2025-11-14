@@ -13,24 +13,32 @@ section.experience {
 section.experience h2 {
   text-align: center;
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+/* Paragraph full width like header (optional description before cards) */
+section.experience p {
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: justify;
+  line-height: 1.7;
 }
 
 /* Experience Cards Wrapper – GRID like Family Page */
 .experience-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   width: 100%;
 }
 
-/* Individual Experience Cards */
+/* Individual Experience Cards – match Family Page style */
 .exp-box {
-  background-color: rgba(32, 42, 68, 0.8);
+  background: #2A3455;              /* same as family-card */
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 15px;              /* same as family-card */
   text-align: center;
-  border: 2px solid #f0f3fa;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* same hover shadow */
   transition: 0.3s;
 }
 
@@ -38,13 +46,13 @@ section.experience h2 {
   transform: translateY(-5px);
 }
 
-/* Images inside the card */
+/* Images inside the card – full 16:9 like family page */
 .exp-img {
   width: 100%;
-  height: 380px;         /* consistent height */
-  object-fit: cover;
-  object-position: top;  /* align from top */
-  border-radius: 8px;
+  aspect-ratio: 16/9;               /* maintain 16:9 */
+  object-fit: cover;                 /* cover whole box */
+  object-position: top;              /* align from top */
+  border-radius: 12px;
   margin-bottom: 15px;
 }
 
@@ -58,14 +66,14 @@ section.experience h2 {
 .exp-box p em {
   font-size: 14px;
   color: #c2c8da;
-  display: block;       /* make it take full width */
+  display: block;       /* full width */
   text-align: center;   /* center the text */
-  margin-bottom: 10px;  /* optional spacing below */
+  margin-bottom: 10px;  /* spacing below */
 }
 
 .exp-box p {
   margin: 0;
-  text-align: justify;
+  text-align: center;   /* match family-card text */
   line-height: 1.6;
 }
 
