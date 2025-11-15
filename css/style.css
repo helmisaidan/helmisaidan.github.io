@@ -177,6 +177,18 @@ section.welcome p {
   color: #9cb3ff; /* a soft bluish tint – pairs beautifully with #202A44 */
 }
 
+/* --- Quotes --- */
+section.quotes {
+  background-color: #202A44;
+}
+
+.quotes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
 .quote-box {
   flex: 1 1 250px;
   background: #2A3455;          /* same as family-card */
@@ -428,6 +440,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
