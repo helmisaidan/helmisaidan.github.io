@@ -131,10 +131,30 @@
   cursor: pointer;
 }
 
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  color: rgba(255,255,255,0.75);
+  background: transparent;      /* Make background transparent */
+  border: none;                  /* Remove border */
+  padding: 0;                    /* Remove padding */
+  cursor: pointer;
+  z-index: 99999;
+  transition: 0.25s;
+}
+
+.nav-btn:hover {
+  color: white;
+  transform: translateY(-50%) scale(1.15);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .gallery-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 
