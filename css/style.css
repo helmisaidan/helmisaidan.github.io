@@ -97,6 +97,9 @@ nav a.active::after {
   height: 520px; /* increased height */
   overflow: hidden;
   border-radius: 10px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .slideshow-container img {
@@ -467,6 +470,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
