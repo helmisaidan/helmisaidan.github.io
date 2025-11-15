@@ -145,8 +145,8 @@
 /* ===== Info Icon & Caption ===== */
 .info-icon {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 6px;
+  right: 12px;
   font-size: 18px;
   color: white;
   cursor: pointer;
@@ -187,3 +187,4 @@
   }
 
 }
+
