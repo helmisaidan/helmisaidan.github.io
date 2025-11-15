@@ -94,7 +94,7 @@ nav a.active::after {
   position: relative;
   max-width: 100%;
   margin: 20px 30px;
-  height: 490px; /* increased height */
+  height: 520px; /* increased height */
   overflow: hidden;
   border-radius: 10px;
 }
@@ -502,6 +502,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
