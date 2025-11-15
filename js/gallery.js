@@ -88,13 +88,32 @@ document.getElementById("prevBtn").onclick = (e) => {
 // Caption list
 // Data caption ikut nama file
 let captions = {
-  "land1.jpg": "Sunset view - Land 1",
-  "land2.jpg": "Green hill",
-  "land3.jpg": "Beautiful forest",
-  "food1.jpg": "Nasi Arab",
-  "food2.jpg": "Laksa Utara",
-  "intern1.jpg": "Internship Day 1",
-  "intern2.jpg": "Internship Day 2",
+  "land1.jpg": "Otw Malinja",
+  "land2.jpg": "Pusat Islam",
+  "land3.jpg": "Bukit H",
+  "land4.jpg": "Malinja A",
+  "land5.jpg": "Pusat Islam",
+  "land6.jpg": "Otw home (Jalan AS)",
+  "land7.jpg": "Gunung Perlis",
+  "land8.jpg": "Bukit H", 
+  "land9.jpg": "Bukit Kodiang",
+  "land10.jpg": "Bukit Telipong",
+  "land11.jpg": "Malinja A",
+  "land12.jpg": "Malinja A",
+  "land13.jpg": "PB, UiTM",
+  "land14.jpg": "UiTM",
+  "land15.jpg": "Pokok depan DP",
+  "land16.jpg": "Malinja A",
+  "land17.jpg": "Home",
+  "land18.jpg": "Home",
+  "land19.jpg": "Home",
+  "land20.jpg": "Otw intern (Masih di Kg)",
+  "land21.jpg": "Otw intern (Masih di Kg)",
+  "land22.jpg": "Home",
+  "food1.jpg": "Habanero Chicken Strips",
+  "food2.jpg": "Pisang Goreng Cheese",
+  "intern1.jpg": "Intern MDPT Day 1",
+  "intern2.jpg": "Intern MDPT Day 1",
   "Bukit H - 1st Time.mp4": "First hiking, Bukit H!",
   "Bukit H - 2nd Time.mp4": "Bukit H 2nd round", 
   "Bukit Telipong.mp4": "Bukit Telipong" 
@@ -137,4 +156,5 @@ function toggleCaption(el) {
   }
   event.stopPropagation();
 }
+
 
