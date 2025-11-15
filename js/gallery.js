@@ -102,12 +102,12 @@ document.getElementById("prevBtn").onclick = (e) => {
 let captions = {
   "land1.jpg": "Otw Malinja",
   "land2.jpg": "Pusat Islam",
-  "land3.jpg": "Bukit H",
+  "land3.jpg": "First hiking, Bukit H!",
   "land4.jpg": "Malinja A",
   "land5.jpg": "Pusat Islam",
   "land6.jpg": "Otw home (Jalan AS)",
   "land7.jpg": "Gunung Perlis",
-  "land8.jpg": "Bukit H", 
+  "land8.jpg": "Bukit H 2nd round", 
   "land9.jpg": "Bukit Kodiang",
   "land10.jpg": "Bukit Telipong",
   "land11.jpg": "Malinja A",
@@ -168,5 +168,6 @@ function toggleCaption(el) {
   }
   event.stopPropagation();
 }
+
 
 
