@@ -93,7 +93,7 @@ nav a.active::after {
 .slideshow-container {
   position: relative;
   max-width: 100%;
-  margin: 20px 30px;
+  margin: 10px 30px;
   height: 520px; /* increased height */
   overflow: hidden;
   border-radius: 10px;
@@ -192,6 +192,7 @@ section h2 {
 section.welcome {
   background-color: #202A44;
   color: #f0f3fa;
+  margin-top: 5px;
 }
 
 section.welcome p {
@@ -502,6 +503,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
