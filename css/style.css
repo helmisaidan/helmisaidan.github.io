@@ -194,6 +194,7 @@ section.quotes {
   justify-content: center;
 }
 
+/* Animasi bernafas + gerak perlahan */
 .quote-box {
   flex: 1 1 250px;
   padding: 20px 20px;
@@ -210,9 +211,22 @@ section.quotes {
   align-items: center;     
   text-align: center;
 
-  transition: transform 0.3s ease, opacity 0.5s ease;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
+  animation: floaty 4s ease-in-out infinite,
+             glow 4s ease-in-out infinite;
+}
+
+/* Gerakan lembut */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+/* Border glow lembut */
+@keyframes glow {
+  0% { border-color: rgba(240,243,250,0.25); }
+  50% { border-color: rgba(240,243,250,0.55); }
+  100% { border-color: rgba(240,243,250,0.25); }
 }
 
 .quote-box:hover {
@@ -470,6 +484,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
