@@ -13,22 +13,24 @@ function filterGallery(category) {
       item.style.display = 'none';
     }
   });
+
+  // UPDATE gallerySources bila tukar kategori
+  updateGallerySources(category);
 }
 
 // Lightbox Image
 function openLightbox(src) {
+  currentIndex = gallerySources.indexOf(src);
+
   document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = src;
-  document.getElementById("lightbox-img").style.display = "block";
-  document.getElementById("lightbox-video").style.display = "none";
+  displayImage(src);
 }
 
-// Lightbox Video
 function openVideoLightbox(src) {
+  currentIndex = gallerySources.indexOf(src);
+
   document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-video").src = src;
-  document.getElementById("lightbox-video").style.display = "block";
-  document.getElementById("lightbox-img").style.display = "none";
+  displayVideo(src);
 }
 
 // Close
@@ -38,12 +40,22 @@ function closeLightbox() {
 }
 
 // Simpan semua media
-let gallerySources = [];
-document.querySelectorAll(".gallery-item img, .gallery-item video").forEach(media => {
-  gallerySources.push(media.getAttribute("src"));
-});
+let gallerySources = Array.from(document.querySelectorAll(".gallery-item img, .gallery-item video"))
+  .map(m => m.src);
 
 let currentIndex = 0;
+
+function updateGallerySources(category) {
+  let selector = (category === "all")
+    ? ".gallery-item img, .gallery-item video"
+    : `.gallery-item.${category} img, .gallery-item.${category} video`;
+
+  gallerySources = Array.from(document.querySelectorAll(selector))
+    .map(m => m.src);
+
+  // Reset index supaya lightbox mula dari item betul
+  currentIndex = 0;
+}
 
 // Update display
 function showMedia(index) {
@@ -156,5 +168,4 @@ function toggleCaption(el) {
   }
   event.stopPropagation();
 }
-
 
