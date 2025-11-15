@@ -95,8 +95,9 @@ let captions = {
   "food2.jpg": "Laksa Utara",
   "intern1.jpg": "Internship Day 1",
   "intern2.jpg": "Internship Day 2",
-  "Bukit H - 1st Time.mp4": "First hiking trip!",
-  "Bukit H - 2nd Time.mp4": "Second round hiking"
+  "Bukit H - 1st Time.mp4": "First hiking, Bukit H!",
+  "Bukit H - 2nd Time.mp4": "Bukit H 2nd round", 
+  "Bukit Telipong.mp4": "Bukit Telipong" 
 };
 
 // Function ambil nama file
@@ -136,3 +137,4 @@ function toggleCaption(el) {
   }
   event.stopPropagation();
 }
+
