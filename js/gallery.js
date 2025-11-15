@@ -37,4 +37,52 @@ function closeLightbox() {
   document.getElementById("lightbox-video").pause();
 }
 
+// Simpan semua media
+let gallerySources = [];
+document.querySelectorAll(".gallery-item img, .gallery-item video").forEach(media => {
+  gallerySources.push(media.getAttribute("src"));
+});
+
+let currentIndex = 0;
+
+// Update display
+function showMedia(index) {
+  currentIndex = index; // set index sekali sahaja
+
+  let src = gallerySources[index];
+  
+  if (src.endsWith(".mp4")) {
+    displayVideo(src);
+  } else {
+    displayImage(src);
+  }
+}
+
+// Display image (tidak set currentIndex lagi)
+function displayImage(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox-img").style.display = "block";
+  document.getElementById("lightbox-video").style.display = "none";
+}
+
+// Display video (tidak set currentIndex lagi)
+function displayVideo(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-video").src = src;
+  document.getElementById("lightbox-video").style.display = "block";
+  document.getElementById("lightbox-img").style.display = "none";
+}
+
+// Next & Prev
+document.getElementById("nextBtn").onclick = (e) => {
+  e.stopPropagation();
+  showMedia((currentIndex + 1) % gallerySources.length);
+};
+
+document.getElementById("prevBtn").onclick = (e) => {
+  e.stopPropagation();
+  showMedia((currentIndex - 1 + gallerySources.length) % gallerySources.length);
+};
+
 
