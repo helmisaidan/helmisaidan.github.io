@@ -117,14 +117,13 @@ section {
 section h2 {
   font-size: 32px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Welcome */
 section.welcome {
   background-color: #202A44;
   color: #f0f3fa;
-  margin-top: 0px;
 }
 
 section.welcome p {
@@ -405,6 +404,10 @@ header .logo {
     padding: 30px 15px;
   }
    
+  section.welcome {
+    padding-top: 10px; /* rapatkan */
+  }
+
   section.welcome p {
   text-align: justify;
   }
@@ -440,6 +443,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
