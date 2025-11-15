@@ -145,7 +145,7 @@ document.querySelectorAll('.gallery-item img, .gallery-item video').forEach(medi
   // Create icon
   let icon = document.createElement('div');
   icon.classList.add('info-icon');
-  icon.innerText = "ℹ️";
+  icon.innerText = "ⓘ";
   icon.onclick = function(e) {
     toggleCaption(this);
   };
@@ -168,4 +168,5 @@ function toggleCaption(el) {
   }
   event.stopPropagation();
 }
+
 
