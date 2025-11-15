@@ -85,4 +85,54 @@ document.getElementById("prevBtn").onclick = (e) => {
   showMedia((currentIndex - 1 + gallerySources.length) % gallerySources.length);
 };
 
+// Caption list
+// Data caption ikut nama file
+let captions = {
+  "land1.jpg": "Sunset view - Land 1",
+  "land2.jpg": "Green hill",
+  "land3.jpg": "Beautiful forest",
+  "food1.jpg": "Nasi Arab",
+  "food2.jpg": "Laksa Utara",
+  "intern1.jpg": "Internship Day 1",
+  "intern2.jpg": "Internship Day 2",
+  "Bukit H - 1st Time.mp4": "First hiking trip!",
+  "Bukit H - 2nd Time.mp4": "Second round hiking"
+};
 
+// Function ambil nama file
+function getFileName(path) {
+  return path.split('/').pop();
+}
+
+// Auto inject icon + caption
+document.querySelectorAll('.gallery-item img, .gallery-item video').forEach(media => {
+  let parent = media.parentElement; // .gallery-item atau .video-thumb
+  let file = getFileName(media.getAttribute('src'));
+  let capText = captions[file] || "No caption";
+
+  // Create icon
+  let icon = document.createElement('div');
+  icon.classList.add('info-icon');
+  icon.innerText = "ℹ️";
+  icon.onclick = function(e) {
+    toggleCaption(this);
+  };
+
+  // Create caption
+  let cap = document.createElement('div');
+  cap.classList.add('info-caption');
+  cap.innerText = capText;
+
+  // Append
+  parent.appendChild(icon);
+  parent.appendChild(cap);
+});
+function toggleCaption(el) {
+  let cap = el.parentElement.querySelector('.info-caption');
+  if (cap.style.display === "block") {
+    cap.style.display = "none";
+  } else {
+    cap.style.display = "block";
+  }
+  event.stopPropagation();
+}
