@@ -31,8 +31,31 @@ function openVideoLightbox(src) {
   document.getElementById("lightbox-img").style.display = "none";
 }
 
+/* PLAY ICON OVER VIDEO THUMBNAIL */
+.video-thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-thumb video {
+  pointer-events: none; /* Prevent video auto playing when clicking */
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
 // Close
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
   document.getElementById("lightbox-video").pause();
 }
+
