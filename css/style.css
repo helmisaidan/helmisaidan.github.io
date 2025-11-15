@@ -111,6 +111,9 @@ nav a.active::after {
 ========================= */
 section {
   padding: 30px 30px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.2s;
 }
 
 /* H2 CENTERED */
@@ -190,22 +193,27 @@ section.quotes {
 
 .quote-box {
   flex: 1 1 250px;
-  background: #2A3455;          /* same as family-card */
-  color: #f0f3fa;
-  padding: 30px 20px;
-  border-radius: 15px;          /* same as family-card */
-  text-align: center;
+  padding: 20px 20px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(240,243,250,0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+  backdrop-filter: blur(4px);
+  min-height: 180px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 180px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);  /* same shadow */
-  transition: 0.3s;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .quote-box:hover {
-  transform: translateY(-5px);   /* same hover as family-card */
+  transform: translateY(-5px) scale(1.02);
 }
 
 .quote-box p {
@@ -216,6 +224,19 @@ section.quotes {
 .quote-box span {
   font-size: 14px;
   color: #c2c8da;
+  opacity: 0.8;
+}
+
+/* Fade-in upward animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Quick Links */
@@ -443,6 +464,7 @@ header .logo {
     padding: 8px 12px;
   }
 }
+
 
 
 
