@@ -60,12 +60,6 @@
   border-radius: 10px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .gallery-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 /* LIGHTBOX POPUP */
 #lightbox {
   display: none;
@@ -92,7 +86,11 @@
 }
 
 .video-thumb video {
-  pointer-events: none; /* Prevent video auto playing when clicking */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  pointer-events: none; /* supaya tak play dalam grid */
 }
 
 .play-icon {
@@ -115,3 +113,9 @@
   cursor: pointer;
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
