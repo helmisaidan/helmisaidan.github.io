@@ -80,13 +80,22 @@ section.favourites {
   gap: 20px;
 }
 
+/* FAV BOX – New Clean Card Style */
 .fav-box {
   flex: 1 1 250px;
-  border: 2px solid #f0f3fa;
-  border-radius: 10px;
   padding: 20px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(240,243,250,0.25);
+  background-color: rgba(255, 255, 255, 0.05); /* soft translucent */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  backdrop-filter: blur(4px);
   min-height: 180px;
   text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.fav-box:hover {
+  transform: translateY(-3px);
 }
 
 .fav-box h3 {
@@ -287,6 +296,7 @@ section.favourites {
     padding: 8px 12px;
   }
 }
+
 
 
 
