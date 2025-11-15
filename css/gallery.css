@@ -104,6 +104,24 @@
   pointer-events: none;
 }
 
+.video-thumb::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transform: translate(-50%, -50%);
+  animation: ripple 2s infinite ease-out;
+}
+
+@keyframes ripple {
+  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+}
+
 .close-btn {
   position: absolute;
   top: 25px;
@@ -119,3 +137,4 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
