@@ -102,12 +102,12 @@ document.getElementById("prevBtn").onclick = (e) => {
 let captions = {
   "land1.jpg": "Otw Malinja",
   "land2.jpg": "Pusat Islam",
-  "land3.jpg": "First hiking, Bukit H!",
+  "land3.jpg": "Bukit H",
   "land4.jpg": "Malinja A",
   "land5.jpg": "Pusat Islam",
   "land6.jpg": "Otw home (Jalan AS)",
   "land7.jpg": "Gunung Perlis",
-  "land8.jpg": "Bukit H 2nd round", 
+  "land8.jpg": "Bukit H", 
   "land9.jpg": "Bukit Kodiang",
   "land10.jpg": "Bukit Telipong",
   "land11.jpg": "Malinja A",
@@ -128,10 +128,9 @@ let captions = {
   "intern2.jpg": "Intern MDPT Day 1",
   "Bukit H - 1st Time.mp4": "First hiking, Bukit H!",
   "Bukit H - 2nd Time.mp4": "Bukit H 2nd round", 
-  "Bukit Telipong.mp4": "Bukit Telipong"
-  "Gunung Perlis.mp4": "Gunung Perlis" 
+  "Bukit Telipong.mp4": "Bukit Telipong",
+  "Gunung Perlis.mp4": "Gunung Perlis", 
   "Bukit Kodiang.mp4": "Bukit Kodiang" 
-
 };
 
 // Function ambil nama file
@@ -171,7 +170,4 @@ function toggleCaption(el) {
   }
   event.stopPropagation();
 }
-
-
-
 
