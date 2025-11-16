@@ -14,6 +14,13 @@ section.edu-timeline {
   margin-bottom: 20px;
 }
 
+.education-desc {
+  text-align: center;
+  color: #c2c8da;
+  font-size: 16px;
+  margin: -10px 0 25px 0; /* rapat macam gallery */
+}
+
 .edu-timeline {
   position: relative;
   max-width: 900px;
@@ -135,3 +142,4 @@ section.edu-timeline {
     padding: 8px 12px;
   }
 }
+
