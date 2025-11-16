@@ -1,8 +1,8 @@
 /* =========================
-   EXPERIENCE
+   EXPERIENCE PAGE – BLOG STYLE
 ========================= */
 
-/* Section padding */
+/* Section padding – sama macam Family page */
 section.experience {
   padding: 30px 30px;
   background-color: #202A44;
@@ -13,75 +13,138 @@ section.experience {
 section.experience h2 {
   text-align: center;
   font-size: 32px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-/* Paragraph full width like header (optional description before cards) */
-section.experience p {
-  width: 100%;
-  margin-bottom: 10px;
-  text-align: justify;
-  line-height: 1.7;
+/* Paragraph under H2 */
+.experience-desc {
+  text-align: center;
+  color: #c2c8da;
+  font-size: 16px;
+  margin: -10px 0 35px 0;
 }
 
-/* Experience Cards Wrapper – GRID like Family Page */
+/* Experience Cards Wrapper – 1 box per row */
 .experience-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 25px;
   width: 100%;
 }
 
-/* Individual Experience Cards – match Family Page style */
+/* Individual Experience Cards – flex row, image left, text right */
 .exp-box {
-  background: #2A3455;              /* same as family-card */
+  background: rgba(255, 255, 255, 0.05);
   padding: 20px;
-  border-radius: 15px;              /* same as family-card */
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* same hover shadow */
-  transition: 0.3s;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 1.5px solid rgba(240,243,250,0.2);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.5s ease, box-shadow 0.3s ease;
+
+  animation: floaty 4s ease-in-out infinite, glow 4s ease-in-out infinite;
 }
 
 .exp-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-color: rgba(240,243,250,0.35);
 }
 
-/* Images inside the card – full 16:9 like family page */
+/* Image left */
 .exp-img {
-  width: 100%;
-  aspect-ratio: 16/9;               /* maintain 16:9 */
-  object-fit: cover;                 /* cover whole box */
-  object-position: top;              /* align from top */
+  width: 40%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 12px;
-  margin-bottom: 15px;
+  flex-shrink: 0;
 }
 
-/* Headings and text */
-.exp-box h3 {
+/* Text content wrapper */
+.exp-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Card headings */
+.exp-content h3 {
   font-size: 22px;
-  margin-bottom: 10px;
+  margin: 0;
   color: #f0f3fa;
 }
 
-.exp-box p em {
+/* Date */
+.exp-content p em {
   font-size: 14px;
   color: #c2c8da;
-  display: block;       /* full width */
-  text-align: center;   /* center the text */
-  margin-bottom: 10px;  /* spacing below */
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
-.exp-box p {
-  margin: 0;
-  text-align: center;   /* match family-card text */
+/* Paragraph */
+.exp-content p.desc {
+  text-align: justify;
+  color: rgba(240,243,250,0.9);
+  font-size: 15px;
   line-height: 1.6;
+  margin: 0;
+}
+
+/* Floaty animation */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% { border-color: rgba(240,243,250,0.2); }
+  50% { border-color: rgba(240,243,250,0.4); }
+  100% { border-color: rgba(240,243,250,0.2); }
 }
 
 /* =========================
-   RESPONSIVE MOBILE
+   RESPONSIVE MOBILE VIEW
 ========================= */
 @media screen and (max-width: 768px) {
   section.experience {
     padding: 30px 15px;
+  }
+
+  .exp-content h3 {
+    text-align: center; /* tajuk center on mobile */
+  }
+
+  .experience-wrapper {
+    gap: 20px;
+  }
+
+  .exp-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .exp-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .exp-content {
+    width: 100%;
+  }
+
+  .exp-content p em {
+    text-align: center;
   }
 }
