@@ -201,7 +201,7 @@ let captions = {
   "intern17.jpg": "Er..",
   "intern18.jpg": "Outside the MDPT",
   "intern19.jpg": "Farewell gift fr. 3 sisters 😭💖",
-  "intern20.jpg": "Mirror selfie"
+  "intern20.jpg": "Mirror selfie",
 
   "Bukit H - 1st Time.mp4": "First hiking, Bukit H!",
   "Bukit H - 2nd Time.mp4": "Bukit H 2nd round",
@@ -249,4 +249,3 @@ function toggleCaption(el) {
   let cap = el.parentElement.querySelector('.info-caption');
   cap.style.display = (cap.style.display === "block") ? "none" : "block";
 }
-
