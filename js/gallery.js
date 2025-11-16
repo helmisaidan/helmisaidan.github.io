@@ -156,34 +156,52 @@ document.getElementById("prevBtn").onclick = (e) => {
 // CAPTIONS: DATA
 // =========================================================
 let captions = {
-  "land1.jpg": "Otw Malinja",
+  "land1.jpg": "Omw to Malinja",
   "land2.jpg": "Pusat Islam",
   "land3.jpg": "Bukit H",
   "land4.jpg": "Malinja A",
   "land5.jpg": "Pusat Islam",
-  "land6.jpg": "Otw home (Jalan AS)",
+  "land6.jpg": "Heading Home (Jalan AS)",
   "land7.jpg": "Gunung Perlis",
   "land8.jpg": "Bukit H",
   "land9.jpg": "Bukit Kodiang",
   "land10.jpg": "Bukit Telipong",
   "land11.jpg": "Malinja A",
   "land12.jpg": "Malinja A",
-  "land13.jpg": "PB, UiTM",
+  "land13.jpg": "Pondok Polis Bantuan",
   "land14.jpg": "UiTM",
-  "land15.jpg": "Pokok depan DP",
+  "land15.jpg": "Dewan Perdana",
   "land16.jpg": "Malinja A",
   "land17.jpg": "Home",
   "land18.jpg": "Home",
   "land19.jpg": "Home",
-  "land20.jpg": "Otw intern (Masih di Kg)",
-  "land21.jpg": "Otw intern (Masih di Kg)",
+  "land20.jpg": "Omw to intern (still in my hometown)",
+  "land21.jpg": "Omw to intern (still in my hometown)",
   "land22.jpg": "Home",
 
-  "food1.jpg": "Habanero Chicken Strips",
+  "food1.jpg": "Spicy Honey Habanero Chicken Strips",
   "food2.jpg": "Pisang Goreng Cheese",
 
-  "intern1.jpg": "Intern MDPT Day 1",
-  "intern2.jpg": "Intern MDPT Day 1",
+  "intern1.jpg": "MDPT – Front view",
+  "intern2.jpg": "MDPT D1 Intern",
+  "intern3.jpg": "Intern Task",
+  "intern4.jpg": "MDPT Front ViewT",
+  "intern5.jpg": "Inside the MDPT",
+  "intern6.jpg": "Intern Task",
+  "intern7.jpg": "Lunch break at Bangah Cafe",
+  "intern8.jpg": "Bangah Cafe’s Menu",
+  "intern9.jpg": "Bangah Cafe’s Menu",
+  "intern10.jpg": "Outside MDPT",
+  "intern11.jpg": "Motivation",
+  "intern12.jpg": "A campaign by MDPT",
+  "intern13.jpg": "A campaign by MDPT",
+  "intern14.jpg": "Design",
+  "intern15.jpg": "Printed out the design",
+  "intern16.jpg": "Random selfie",
+  "intern17.jpg": "Er..",
+  "intern18.jpg": "Outside the MDPT",
+  "intern19.jpg": "Farewell gift fr. 3 sisters 😭💖",
+  "intern20.jpg": "Mirror selfie"
 
   "Bukit H - 1st Time.mp4": "First hiking, Bukit H!",
   "Bukit H - 2nd Time.mp4": "Bukit H 2nd round",
@@ -231,3 +249,4 @@ function toggleCaption(el) {
   let cap = el.parentElement.querySelector('.info-caption');
   cap.style.display = (cap.style.display === "block") ? "none" : "block";
 }
+
