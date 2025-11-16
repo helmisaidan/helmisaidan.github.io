@@ -6,7 +6,7 @@
 section.family {
   padding: 30px 30px;
   background-color: #202A44;
-  color: white;
+  color: #f0f3fa;
 }
 
 /* Title */
@@ -16,20 +16,14 @@ section.family h2 {
   margin-bottom: 20px;
 }
 
-/* Paragraph full width like header */
-section.family p {
-  width: 100%;
-  margin-bottom: 40px;
+/* Paragraph under H2 – descriptive text same as gallery page */
+section.family > p:first-of-type {
   text-align: center;
-  line-height: 1.7;
-}
-
-/* Family Description sama style macam gallery page */
-.family-desc {
-  text-align: center;
-  color: #c2c8da;   /* sama macam gallery desc */
+  color: #c2c8da;   /* soft grey untuk bezakan dari card text */
   font-size: 16px;
-  margin-bottom: 25px;  /* jarak bawah paragraph */
+  margin-bottom: 25px;
+  line-height: 1.7;
+  font-style: italic;   /* subtle perbezaan */
 }
 
 /* Family Cards Wrapper FULL WIDTH */
@@ -40,18 +34,34 @@ section.family p {
   width: 100%;
 }
 
-/* Individual Cards */
+/* =========================
+   FAMILY CARD – UPDATED STYLE
+========================= */
+
+/* Individual Cards – glassmorphism + subtle float */
 .family-card {
-  background: #2A3455;
+  background: rgba(255, 255, 255, 0.05); /* transparent glass effect */
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 1.5px solid rgba(240,243,250,0.2);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, border-color 0.5s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  animation: floaty 4s ease-in-out infinite, glow 4s ease-in-out infinite;
 }
 
+/* Hover effect */
 .family-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-color: rgba(240,243,250,0.35);
 }
 
 /* Card Images */
@@ -59,19 +69,38 @@ section.family p {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  object-position: top;   /* <— bagi gambar align dari atas */
+  object-position: top;
   border-radius: 12px;
   margin-bottom: 15px;
 }
 
+/* Card Titles */
 .family-card h3 {
   font-size: 22px;
   margin-bottom: 10px;
+  color: #f0f3fa;
 }
 
+/* Card paragraph text – tetap style card */
 .family-card p {
   text-align: center;
   margin: 0;
+  color: rgba(240,243,250,0.9); /* putih sedikit translucent */
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* Soft floaty animation */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes glow {
+  0% { border-color: rgba(240,243,250,0.2); }
+  50% { border-color: rgba(240,243,250,0.4); }
+  100% { border-color: rgba(240,243,250,0.2); }
 }
 
 /* =========================
@@ -82,5 +111,15 @@ section.family p {
   /* General section spacing */
   section.family {
     padding: 30px 15px;
-
   }
+
+  /* Family wrapper responsive */
+  .family-wrapper {
+    gap: 20px;
+  }
+
+  /* Card image height adjust */
+  .family-card img {
+    height: 160px;
+  }
+}
