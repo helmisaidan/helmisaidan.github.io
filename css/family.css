@@ -21,7 +21,7 @@ section.family > p:first-of-type {
   text-align: center;
   color: #c2c8da;   /* soft grey untuk bezakan dari card text */
   font-size: 16px;
-  margin-bottom: 25px;
+  margin: -10px 0 25px 0; /* rapat macam gallery */
   line-height: 1.7;
   font-style: italic;   /* subtle perbezaan */
 }
@@ -123,3 +123,4 @@ section.family > p:first-of-type {
     height: 160px;
   }
 }
+
