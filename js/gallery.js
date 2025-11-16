@@ -1,4 +1,6 @@
-// Filter kategori
+// =========================================================
+// FILTER KATEGORI
+// =========================================================
 function filterGallery(category) {
   let items = document.querySelectorAll('.gallery-item');
   let buttons = document.querySelectorAll('.tab-btn');
@@ -14,11 +16,14 @@ function filterGallery(category) {
     }
   });
 
-  // UPDATE gallerySources bila tukar kategori
   updateGallerySources(category);
 }
 
-// Lightbox Image
+
+
+// =========================================================
+// LIGHTBOX (IMAGE / VIDEO)
+// =========================================================
 function openLightbox(src) {
   currentIndex = gallerySources.indexOf(src);
 
@@ -33,36 +38,72 @@ function openVideoLightbox(src) {
   displayVideo(src);
 }
 
-// Close
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
   document.getElementById("lightbox-video").pause();
 }
 
-// Simpan semua media
-let gallerySources = Array.from(document.querySelectorAll(".gallery-item img, .gallery-item video"))
-  .map(m => m.src);
 
+
+// =========================================================
+// BUILD GALLERY SOURCES + FIX VIDEO THUMBNAILS INDEX
+// =========================================================
+let gallerySources = [];
 let currentIndex = 0;
 
+function buildGallerySources() {
+  gallerySources = [];
+
+  let mediaList = document.querySelectorAll(".gallery-item img, .gallery-item video");
+
+  mediaList.forEach((media, index) => {
+    let src = media.src;
+    gallerySources.push(src);
+
+    // Klik dari parent (.gallery-item / .video-thumb) → dapat index betul
+    media.parentElement.onclick = () => {
+      currentIndex = index;
+
+      if (src.endsWith(".mp4")) {
+        openVideoLightbox(src);
+      } else {
+        openLightbox(src);
+      }
+    };
+  });
+}
+
+// RUN sekali mula
+buildGallerySources();
+
+
+
+// =========================================================
+// UPDATE SOURCES BILA TUKAR KATEGORI
+// =========================================================
 function updateGallerySources(category) {
   let selector = (category === "all")
     ? ".gallery-item img, .gallery-item video"
     : `.gallery-item.${category} img, .gallery-item.${category} video`;
 
-  gallerySources = Array.from(document.querySelectorAll(selector))
-    .map(m => m.src);
+  let mediaList = document.querySelectorAll(selector);
 
-  // Reset index supaya lightbox mula dari item betul
-  currentIndex = 0;
+  gallerySources = [];
+  mediaList.forEach(m => gallerySources.push(m.src));
+
+  currentIndex = 0; // reset
 }
 
-// Update display
+
+
+// =========================================================
+// SHOW MEDIA DALAM LIGHTBOX
+// =========================================================
 function showMedia(index) {
-  currentIndex = index; // set index sekali sahaja
+  currentIndex = index;
 
   let src = gallerySources[index];
-  
+
   if (src.endsWith(".mp4")) {
     displayVideo(src);
   } else {
@@ -70,35 +111,50 @@ function showMedia(index) {
   }
 }
 
-// Display image (tidak set currentIndex lagi)
+
+
+// =========================================================
+// DISPLAY IMAGE
+// =========================================================
 function displayImage(src) {
-  document.getElementById("lightbox").style.display = "flex";
   document.getElementById("lightbox-img").src = src;
   document.getElementById("lightbox-img").style.display = "block";
   document.getElementById("lightbox-video").style.display = "none";
 }
 
-// Display video (tidak set currentIndex lagi)
+
+
+// =========================================================
+// DISPLAY VIDEO
+// =========================================================
 function displayVideo(src) {
-  document.getElementById("lightbox").style.display = "flex";
   document.getElementById("lightbox-video").src = src;
   document.getElementById("lightbox-video").style.display = "block";
   document.getElementById("lightbox-img").style.display = "none";
 }
 
-// Next & Prev
+
+
+// =========================================================
+// NEXT & PREV BUTTONS
+// =========================================================
 document.getElementById("nextBtn").onclick = (e) => {
   e.stopPropagation();
-  showMedia((currentIndex + 1) % gallerySources.length);
+  let nextIndex = (currentIndex + 1) % gallerySources.length;
+  showMedia(nextIndex);
 };
 
 document.getElementById("prevBtn").onclick = (e) => {
   e.stopPropagation();
-  showMedia((currentIndex - 1 + gallerySources.length) % gallerySources.length);
+  let prevIndex = (currentIndex - 1 + gallerySources.length) % gallerySources.length;
+  showMedia(prevIndex);
 };
 
-// Caption list
-// Data caption ikut nama file
+
+
+// =========================================================
+// CAPTIONS: DATA
+// =========================================================
 let captions = {
   "land1.jpg": "Otw Malinja",
   "land2.jpg": "Pusat Islam",
@@ -107,7 +163,7 @@ let captions = {
   "land5.jpg": "Pusat Islam",
   "land6.jpg": "Otw home (Jalan AS)",
   "land7.jpg": "Gunung Perlis",
-  "land8.jpg": "Bukit H", 
+  "land8.jpg": "Bukit H",
   "land9.jpg": "Bukit Kodiang",
   "land10.jpg": "Bukit Telipong",
   "land11.jpg": "Malinja A",
@@ -122,52 +178,56 @@ let captions = {
   "land20.jpg": "Otw intern (Masih di Kg)",
   "land21.jpg": "Otw intern (Masih di Kg)",
   "land22.jpg": "Home",
+
   "food1.jpg": "Habanero Chicken Strips",
   "food2.jpg": "Pisang Goreng Cheese",
+
   "intern1.jpg": "Intern MDPT Day 1",
   "intern2.jpg": "Intern MDPT Day 1",
+
   "Bukit H - 1st Time.mp4": "First hiking, Bukit H!",
-  "Bukit H - 2nd Time.mp4": "Bukit H 2nd round", 
+  "Bukit H - 2nd Time.mp4": "Bukit H 2nd round",
   "Bukit Telipong.mp4": "Bukit Telipong",
-  "Gunung Perlis.mp4": "Gunung Perlis", 
-  "Bukit Kodiang.mp4": "Bukit Kodiang" 
+  "Gunung Perlis.mp4": "Gunung Perlis",
+  "Bukit Kodiang.mp4": "Bukit Kodiang"
 };
 
-// Function ambil nama file
+
+
+// =========================================================
+// GET FILE NAME
+// =========================================================
 function getFileName(path) {
   return path.split('/').pop();
 }
 
-// Auto inject icon + caption
+
+
+// =========================================================
+// AUTO INJECT CAPTION + INFO ICON
+// =========================================================
 document.querySelectorAll('.gallery-item img, .gallery-item video').forEach(media => {
-  let parent = media.parentElement; // .gallery-item atau .video-thumb
+  let parent = media.parentElement;
   let file = getFileName(media.getAttribute('src'));
   let capText = captions[file] || "No caption";
 
-  // Create icon
   let icon = document.createElement('div');
   icon.classList.add('info-icon');
   icon.innerText = "ⓘ";
   icon.onclick = function(e) {
     toggleCaption(this);
+    e.stopPropagation();
   };
 
-  // Create caption
   let cap = document.createElement('div');
   cap.classList.add('info-caption');
   cap.innerText = capText;
 
-  // Append
   parent.appendChild(icon);
   parent.appendChild(cap);
 });
+
 function toggleCaption(el) {
   let cap = el.parentElement.querySelector('.info-caption');
-  if (cap.style.display === "block") {
-    cap.style.display = "none";
-  } else {
-    cap.style.display = "block";
-  }
-  event.stopPropagation();
+  cap.style.display = (cap.style.display === "block") ? "none" : "block";
 }
-
