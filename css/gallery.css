@@ -6,20 +6,20 @@
 .gallery-page h2 {
   font-size: 32px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .gallery-desc {
   text-align: center;
   color: #c2c8da;
   font-size: 16px;
-  margin-bottom: 25px;
+  margin: -10px 0 15px 0; /* sama EXACT seperti family page */
 }
 
 /* ===== Tabs ===== */
 .gallery-tabs {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 .tab-btn {
@@ -187,4 +187,5 @@
   }
 
 }
+
 
