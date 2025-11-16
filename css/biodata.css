@@ -174,12 +174,12 @@ section.favourites {
 
   .bio-top {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
 .bio-pic {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
 
   /* Organic / freeform shape */
@@ -208,7 +208,7 @@ section.favourites {
 
   .bio-top p {
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 0px;
     color: #c2c8da;
   }
 
@@ -322,6 +322,7 @@ section.favourites {
     padding: 8px 12px;
   }
 }
+
 
 
 
