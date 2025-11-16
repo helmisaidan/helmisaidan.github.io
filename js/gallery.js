@@ -128,7 +128,10 @@ let captions = {
   "intern2.jpg": "Intern MDPT Day 1",
   "Bukit H - 1st Time.mp4": "First hiking, Bukit H!",
   "Bukit H - 2nd Time.mp4": "Bukit H 2nd round", 
-  "Bukit Telipong.mp4": "Bukit Telipong" 
+  "Bukit Telipong.mp4": "Bukit Telipong"
+  "Gunung Perlis.mp4": "Gunung Perlis" 
+  "Bukit Kodiang.mp4": "Bukit Kodiang" 
+
 };
 
 // Function ambil nama file
@@ -168,6 +171,7 @@ function toggleCaption(el) {
   }
   event.stopPropagation();
 }
+
 
 
 
