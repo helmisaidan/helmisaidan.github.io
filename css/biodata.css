@@ -180,12 +180,31 @@ section.favourites {
 .bio-pic {
   width: 200px;
   height: 200px;
-  border-radius: 50%; /* 👉 ini buat gambar bulat */
-  object-fit: cover;   /* pastikan gambar tak terdistort */
-  border: 4px solid #fff; /* boleh tukar warna border ikut tema */
-  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* optional: bagi efek lembut */
+  object-fit: cover;
+
+  /* Organic / freeform shape */
+  clip-path: polygon(
+    25% 5%, 75% 0%, 
+    100% 25%, 95% 75%, 
+    75% 100%, 25% 95%, 
+    0% 75%, 5% 25%
+  );
+
+  /* Outline ikut ketebalan table */
+  border: 15px solid #f0f3fa; /* sama macam info-table */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* optional untuk depth */
+  transition: transform 0.3s, clip-path 0.3s;
 }
 
+.bio-pic:hover {
+  transform: scale(1.05);
+  clip-path: polygon(
+    20% 0%, 80% 5%, 
+    100% 30%, 90% 80%, 
+    70% 100%, 30% 90%, 
+    0% 70%, 5% 20%
+  );
+}
 
   .bio-top p {
     font-size: 14px;
@@ -303,6 +322,7 @@ section.favourites {
     padding: 8px 12px;
   }
 }
+
 
 
 
