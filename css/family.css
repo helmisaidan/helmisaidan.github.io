@@ -17,12 +17,11 @@ section.family h2 {
 }
 
 /* Paragraph under H2 – descriptive text same as gallery page */
-section.family > p:first-of-type {
+.family-desc {
   text-align: center;
-  color: #c2c8da;   /* soft grey untuk bezakan dari card text */
+  color: #c2c8da;
   font-size: 16px;
-  margin: -10px 0 25px 0; /* rapat macam gallery */
-  line-height: 1.7;
+  margin: -10px 0 35px 0; /* rapat macam gallery */
 }
 
 /* Family Cards Wrapper FULL WIDTH */
@@ -122,5 +121,6 @@ section.family > p:first-of-type {
     height: 160px;
   }
 }
+
 
 
