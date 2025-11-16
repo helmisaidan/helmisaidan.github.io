@@ -23,7 +23,6 @@ section.family > p:first-of-type {
   font-size: 16px;
   margin: -10px 0 25px 0; /* rapat macam gallery */
   line-height: 1.7;
-  font-style: italic;   /* subtle perbezaan */
 }
 
 /* Family Cards Wrapper FULL WIDTH */
@@ -123,4 +122,5 @@ section.family > p:first-of-type {
     height: 160px;
   }
 }
+
 
