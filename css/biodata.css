@@ -80,6 +80,13 @@ section.favourites {
   gap: 20px;
 }
 
+.quotes-desc {
+  text-align: center;
+  color: #c2c8da;
+  font-size: 16px;
+  margin: -10px 0 25px 0; /* rapat macam gallery */
+}
+
 /* FAV BOX – New Clean Card Style */
 .fav-box {
   flex: 1 1 250px;
@@ -296,6 +303,7 @@ section.favourites {
     padding: 8px 12px;
   }
 }
+
 
 
 
