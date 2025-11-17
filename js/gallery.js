@@ -242,7 +242,13 @@ let captions = {
   "Bukit H - 2nd Time.mp4": "Bukit H 2nd round",
   "Bukit Telipong.mp4": "Bukit Telipong",
   "Gunung Perlis.mp4": "Gunung Perlis",
-  "Bukit Kodiang.mp4": "Bukit Kodiang"
+  "Bukit Kodiang.mp4": "Bukit Kodiang",
+  "Langit di Rumah.mp4": "Sky at Home",
+  "Kelas IMD263.mp4": "With Classmates & Mdm Syakinah",
+  "Tanjung Dawai.mp4": "Tanjung Dawai ‹𝟹",
+  "Tanjung Dawai 2.mp4": "Tanjung Dawai ‹𝟹",
+  "Tanjung Dawai 3.mp4": "Tanjung Dawai ‹𝟹",
+  "Tanjung Dawai 4.mp4": "Tanjung Dawai ‹𝟹"
 };
 
 
@@ -284,5 +290,6 @@ function toggleCaption(el) {
   let cap = el.parentElement.querySelector('.info-caption');
   cap.style.display = (cap.style.display === "block") ? "none" : "block";
 }
+
 
 
