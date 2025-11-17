@@ -156,7 +156,7 @@ document.getElementById("prevBtn").onclick = (e) => {
 // CAPTIONS: DATA
 // =========================================================
 let captions = {
-  "land1.jpg": "Omw to Malinja",
+  "land1.jpg": "Tanjung Dawai",
   "land2.jpg": "Pusat Islam",
   "land3.jpg": "Bukit H",
   "land4.jpg": "Malinja A",
@@ -178,6 +178,9 @@ let captions = {
   "land20.jpg": "Omw to intern (still in my hometown)",
   "land21.jpg": "Omw to intern (still in my hometown)",
   "land22.jpg": "Home",
+  "land23.jpg": "Bukit H",
+  "land24.jpg": "Bukit H",
+  "land25.jpg": "Bukit H",
 
   "food1.jpg": "Spicy Honey Habanero Chicken Strips",
   "food2.jpg": "Pisang Goreng Cheese",
@@ -281,4 +284,5 @@ function toggleCaption(el) {
   let cap = el.parentElement.querySelector('.info-caption');
   cap.style.display = (cap.style.display === "block") ? "none" : "block";
 }
+
 
